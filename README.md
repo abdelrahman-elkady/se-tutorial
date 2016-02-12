@@ -13,13 +13,14 @@ Each person in the tutorial will be later assigned a task (issues) and asked to 
 
 This repo is cloned by each tutorial group in the beginign of the lab and is used to track progress throughout the course.
 
-- A lab[x].md file for eacg lab will be present to guide to the lab
+- A lab[x].md file for each lab will be present to guide to the lab
     + Every lab.md has a pre, a tutorial and post section
     + pre is for things the student should do before and is for saving time in the actual tutorial.
     + the tutorial is for making sure the student understands the objectives and is adapted based on the work done by the sutdents so far.
     + the post section is for extra reading and extending on the topics covered.
+    + each lab start and end commit is marked by a tag `lab-n-start` and `lab-n-end` where n is the lab number.
 - A branch is created wen working on a lab.
-    + TA tags the branch so that people can refer back to it in case they wanna start from scratch.
+    + TA tags the branch so that people can refer back to it in case they wanna start from that point/follow along.
 - The TA manages the fork and decides what to include in the master branch
 
 ##Enviroment setup
