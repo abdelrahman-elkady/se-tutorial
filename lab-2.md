@@ -424,7 +424,7 @@ We can then use it in other files by calling require
 ```js
 // test2.js
 
-var test = require('./test2.js');
+var test = require('./test.js');
 
 test.print(test.a)
 
@@ -604,6 +604,7 @@ After completing this tutorial you have enough knowledge to try working with tut
 
 [learn more about functional programing](https://github.com/timoxley/functional-javascript-workshop)
 [learn about design patterns](http://www.dofactory.com/javascript/design-patterns)
+[more on design patterns](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)
 
 
 
