@@ -18,7 +18,7 @@
 
 - Complete [the first project](https://dash.generalassemb.ly/) (4 lessons) on dash by gernealassemb.ly
 
-## TA Tutroial Guide
+## Tutroial Guide
 
 If you don't yet have a unix system you can follow along with the TA
 
@@ -147,7 +147,9 @@ We will use the terminal whenever we want to run commands; however, feel free to
 Now that we have our text editor open go ahead and create google.com (like the one in the lecture).
 
 start by creating an index.html file and write your html there
-once done you can see it in the browser by double clicking on the file or by typing `chrome index.html` or firefox `index.html`
+once done you can see it in the browser by double clicking on the file or by typing `chrome index.html` or `firefox index.html`
+
+> in ubuntu it is `chromium-browser index.html`
 
 You can inspect element and see the html
 You can see the http requests via the chrome networks tab (go to a site like the actuall google.com and what happens in the networks tab).
@@ -168,3 +170,5 @@ http://code.tutsplus.com/tutorials/http-the-protocol-every-web-developer-must-kn
 http://code.tutsplus.com/tutorials/http-headers-for-dummies--net-8039
 
 For more on dev tools see [discover-devtools](http://discover-devtools.codeschool.com/)
+
+For genrall refrence see [w3schools](www.w3schools.com) - You can learn a lot from just reading the reference by the way.

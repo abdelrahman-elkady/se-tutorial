@@ -1,4 +1,4 @@
-# se-tutorial
+# SE Tutorial
 
 A starter template for the se classes
 
@@ -21,9 +21,12 @@ This repo is cloned by each tutorial group in the beginign of the lab and is use
     + each lab start and end commit is marked by a tag `lab-n-start` and `lab-n-end` where n is the lab number.
 - A branch is created wen working on a lab.
     + TA tags the branch so that people can refer back to it in case they wanna start from that point/follow along.
-- The TA manages the fork and decides what to include in the master branch
+- The TA manages the fork
+- Each tutorail group maintains will have a development branch that they merge too the master branch will remain pure only for receiving updates from the original fork (this isn't a requirment normally it is just for organization).
 
-##Enviroment setup
+> If there an any issues open an issue on [the original repo](https://github.com/amrdraz/se-tutorial)
+
+## Enviroment setup
 
 The course assumes a UNIX shell (Either mac or linux), acordingly if you're a windows user you are requested to setup a UNIX enviroment follow one of the following guids
 
@@ -43,12 +46,39 @@ You must have [git installed](http://git-scm.com/download) (objviously)
 SE uses the [MEAN](http://mean.io/) stack
 You can learn the stack on your own by watching [this edx course](https://www.edx.org/course/introduction-mongodb-using-mean-stack-mongodbx-m101x) takes around 5 slots to complete
 
-You will need to have on your system [nodejs](https://nodejs.org/en/) and [mongodb](https://docs.mongodb.org/manual/installation/) installed.
+You will need to have on your system [mongodb](https://docs.mongodb.org/manual/installation/) installed.
+
+You will also need [nodejs](https://nodejs.org/en/) however we encourage you install node using [nvm](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-with-nvm-node-version-manager-on-a-vps) in this course we use node 5.x at the time of this writing it is 5.6
 
 We encourage the use of a simple yet plugable text editor such as [sublime text](https://www.sublimetext.com/3).
 
 We use google chrome's dev tools in this course - on linux that would be chromium.
 
+## Table of Content
+
+To visit any lesson type in the terminal
+    
+    git checkout lab-n-start
+
+where n is the number of the lab you can visit subsection by typing
+
+    `git checkout lab-n-m`
+
+where m is the number of the section in the lesson.
+
+1. [Get started](./lab-1.md)
+    - Get started learning HTML and CSS.
+    - How to use the terminal.
+    - How to open a simple webpage in the browser.
+2. [Node and mongodb](./lab-2.md)
+    - Get stareted with mongodb
+    - Get stared with node
+        - Function Callbacks
+        - Modules
+    - Basic server
+    - Serving file from server
+    - npm install
+    - Connecting to the database and serving JSON
 
 
 
