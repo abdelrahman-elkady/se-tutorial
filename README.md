@@ -60,7 +60,9 @@ To visit any lesson type in the terminal
     
     git checkout lab-n-start
 
-where n is the number of the lab you can visit subsection by typing
+Where n is the number of the lab.
+
+You can visit subsection by typing
 
     `git checkout lab-n-m`
 
