@@ -602,7 +602,10 @@ You can now stop the node server in the termainl with `Ctrl+C` and restart it wi
 
 After completing this tutorial you have enough knowledge to try working with tutorials that are npm based
 
-[learn more about functional programing](https://github.com/timoxley/functional-javascript-workshop_
+[learn more about functional programing](https://github.com/timoxley/functional-javascript-workshop)
+[learn about design patterns](http://www.dofactory.com/javascript/design-patterns)
+
+
 
 
 
