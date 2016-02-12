@@ -111,19 +111,19 @@ The default for `cd` is `cd ~` which cahnges directory back to your home directo
 To create a folder we make a directory `mkdir`
 
     draz at apples-MacBook-Pro.local  ~/se-project/se-tutorial
-    $ mkdir site
+    $ mkdir app
 
 we can check that is was created with `ls`
 
     draz at apples-MacBook-Pro.local  ~/se-project/se-tutorial
     $ ls
-    README.md    lab1.md      package.json     site
+    README.md    lab1.md      package.json     app
 
 we can then move into it with `cd`
 
     draz at apples-MacBook-Pro.local  ~/se-project/se-tutorial
     $ cd site
-    draz at apples-MacBook-Pro.local  ~/se-project/se-tutorial/site
+    draz at apples-MacBook-Pro.local  ~/se-project/se-tutorial/app
 
 #### using sublime in the terminal
 
@@ -135,7 +135,7 @@ Mac users will need to add it just copy and past this into your terminal
 
 With `subl` you can tell sublime to open a directory or file
 
-    draz at apples-MacBook-Pro.local  ~/se-project/se-tutorial/site
+    draz at apples-MacBook-Pro.local  ~/se-project/se-tutorial/app
     $ subl .
 
 From here we can continue editing our files in sublime
