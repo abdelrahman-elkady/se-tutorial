@@ -5,7 +5,7 @@
 - Learn how to use mongodb.
 - Learn how to use nodejs.
 - setup a basic server
-- have it serve our indec.html page
+- have it serve our index.html page
 - have our server serve JSON from our database.
 
 ## Requires

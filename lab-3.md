@@ -1,4 +1,4 @@
-# Lab 2
+# Lab 3
 
 ## Objective
 
@@ -29,34 +29,110 @@ After this tutorial you should know everything you need to contribute to an oper
 - mongodb
 - nodejs
 - git
+- A github account
 - npm packges mocha, chai, superagent? instanbule
 
 ## Pre
 
-- fill this [form](https://docs.google.com/forms/d/1p2NTsF4bZSSeTwakwAbNJaePHwL1VmSQMR0GESy7j2A/viewform) creating a github account
-- do [try.github.io](https://try.github.io) (15min)
+- Fill this [form](https://docs.google.com/forms/d/1p2NTsF4bZSSeTwakwAbNJaePHwL1VmSQMR0GESy7j2A/viewform) creating a github account
+- Do [try.github.io](https://try.github.io) (15min)
+- Do [this nice visualization](http://pcottle.github.io/learnGitBranching/) (you can do just the first 8 levels)
 
 ## Tutroial Guide
 
-Ok so now that we have some files and a server we need to work on making sure it works with everyone.
+Ok so now that we have some files and a server but we're not the only people working on the project.
 
-When working with other people some considerations need to be made
+When working with other people some considerations need to be made.
 
-- not a single person is aware of the whole project so writing tests becomes even more important.
-- we need a system for collaboration.
+- Not a single person is aware of the whole project so writing good documentation, clean code, and tests becomes even more important as we will accedentlly break code.
+- We need a process for collaboration.
 
-In this lab we will get you familiar with git and the git flow
+In this lab we will get you familiar with git and the git flow while writing some tests for our project and talking about some maintenense practice.
 
-and write some tests
-
-You will clone the repo form your respective repository the syntax for finding your tutorial rep is se-2016-[c,d,b]-[tutorial_number] -  c,d,b is th first letter of your major eg: se-2016-c-15 for CSEN tutorial 15.
+If you have problems with git, still didn't install ubuntu, you can use the temporary cloud based linux instanse provided by [c9.io](c9.io)
 
 
+### Gitting the SE tutorial
+
+In order to get started with the tutorial you can visit one of the forks on your tutorial's organization on github
+
+- https://github.com/se-2016-c-10/se-tutorial.git
+- https://github.com/se-2016-c-11/se-tutorial.git
+- https://github.com/se-2016-c-12/se-tutorial.git
+- https://github.com/se-2016-c-13/se-tutorial.git
+- https://github.com/se-2016-c-14/se-tutorial.git
+- https://github.com/se-2016-c-15/se-tutorial.git
+- https://github.com/se-2016-b-15/se-tutorial.git
+- https://github.com/se-2016-b-16/se-tutorial.git
+- https://github.com/se-2016-b-17/se-tutorial.git
+- https://github.com/se-2016-dmet/se-tutorial.git
+
+And clone the repo in your working folder
+
+```
+draz at apples-MacBook-Pro.local  ~/se-project
+$ git clone https://github.com/amrdraz/se-tutorial.git
+```
+
+> switch amrdraz with your tutorial organization which should be one of the above
+
+After you clone cd into the repo and make sure to checkout the start of this lab by running
+
+```
+draz at apples-MacBook-Pro.local  ~/se-project
+$ cd se-tutorial
+draz at apples-MacBook-Pro.local  ~/se-project/se-tutorial on master
+$ git checkout lab-3-start
+```
+
+This labs starts off where we left off in our previous lab you have a server.js file and some test.js files which we used to try out some javacript.
+
+### Git ready
+
+Now to get familiar with git we'll make a local copy of the repo for us to experiment with without affecting the main master branch.
+
+Follow along as we simulate several situations you will deal with in your respective projects.
+
+```
+draz at apples-MacBook-Pro.local  ~/se-project/se-tutorial on master
+$ git branch gitready
+```
+
+In order to create a new branch from the current one
+
+```
+draz at apples-MacBook-Pro.local  ~/se-project/se-tutorial on master
+$ git checkout gitready
+draz at apples-MacBook-Pro.local  ~/se-project/se-tutorial on gitready
+```
+
+Now anything we do here will not affect the original project
+
+
+> still pending rest of lab since most peopl don't finish past this point
+
+go back to master
+
+
+```
+draz at apples-MacBook-Pro.local  ~/se-project/se-tutorial on gitready
+$ git checkout gitready
+draz at apples-MacBook-Pro.local  ~/se-project/se-tutorial on master
+```
+
+create a new branch with your name and add your name to the teams page
+
+Push your branch to the repo
+
+```
+$ git push origin draz
+```
+
+submit a pull request to merge
 
 ## Post Tutorial
 
-become a master of git checkout [this nice visualization](http://pcottle.github.io/learnGitBranching/) (you can do just the first 8 levels)
-For more detail try following [this online book](http://gitimmersion.com), you don’t need to have ruby installed as you never run the files you create
+For more detail try following [this online tutorial book](http://gitimmersion.com), you don’t need to have ruby installed as you never run the files you create.
 
 
 
