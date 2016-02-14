@@ -5,7 +5,7 @@
 - Learn HTML and CSS.
 - Get familiar with your text editor.
 - talk about HTTP status code.
-- Show the devetools elements panel and networks panel.
+- Show the devtools elements panel and networks panel.
 - introduce basic terminal commands.
 
 ## Requires
@@ -18,7 +18,7 @@
 
 - Complete [the first project](https://dash.generalassemb.ly/) (4 lessons) on dash by gernealassemb.ly
 
-## Tutroial Guide
+## Tutorial Guide
 
 If you don't yet have a unix system you can follow along with the TA
 
@@ -38,7 +38,7 @@ Open the terminal in ubuntu the shortcut is `ctrl+alt+t`
 
 To know where we are we can __print working directory__ by typing `pwd`
 
-> $ is not part of the comand and indicates the start of the command
+> $ is not part of the command and indicates the start of the command
 
     draz at apples-MacBook-Pro.local  ~/se-project/se-tutorial
     $ pwd
@@ -70,11 +70,11 @@ Terminal commands have flags `-a` or `--all` for example is a flag that makes `l
 
 #### Dotfiles
 
-A dotfile like `.gitignore` or directory like `.git` is meant to indicate a hidden file or directory that is otherwise not shown to the user and are useually used for configuration related tasks.
+A dotfile like `.gitignore` or directory like `.git` is meant to indicate a hidden file or directory that is otherwise not shown to the user and are usually used for configuration related tasks.
 
 #### Relative path
 
-A reletive path is relative to where you are in the file system
+A relative path is relative to where you are in the file system
 
 `.` stand for the current directory
 `..` stand for previous directory
@@ -103,9 +103,9 @@ To change directory we use `cd`
     $ cd se-tutorial/
     draz at apples-MacBook-Pro.local  ~/se-project/se-tutorial
 
-The default for `cd` is `cd ~` which cahnges directory back to your home directory.
+The default for `cd` is `cd ~` which changes directory back to your home directory.
 
-> typing the tab key while writing will trigger the terminal to autocomplete if directory available (may be case sensitive though).
+> typing the tab key while writing will trigger the terminal to auto complete if directory available (may be case sensitive though).
 
 #### how can we move
 To create a folder we make a directory `mkdir`
@@ -140,19 +140,19 @@ With `subl` you can tell sublime to open a directory or file
 
 From here we can continue editing our files in sublime
 
-We will use the terminal whenever we want to run commands; however, feel free to use a GUI for editing files and navigation chrome technichally has a command as well but you can just open it using the application bar to your right
+We will use the terminal whenever we want to run commands; however, feel free to use a GUI for editing files and navigation chrome technically has a command as well but you can just open it using the application bar to your right
 
 ### index
 
 Now that we have our text editor open go ahead and create google.com (like the one in the lecture).
 
 start by creating an index.html file and write your html there
-once done you can see it in the browser by double clicking on the file or by typing `chrome index.html` or `firefox index.html`
+once done you can see it in the browser by double clicking on the file or by typing `chrome index.html` or `Firefox index.html`
 
 > in ubuntu it is `chromium-browser index.html`
 
 You can inspect element and see the html
-You can see the http requests via the chrome networks tab (go to a site like the actuall google.com and what happens in the networks tab).
+You can see the http requests via the chrome networks tab (go to a site like the actually google.com and what happens in the networks tab).
 
 for more on dev tools see [discover-devtools](http://discover-devtools.codeschool.com/)
 
@@ -163,7 +163,7 @@ For a complete experience building HTML CSS and Javascript pages follow this [gu
 
 Do [this](http://flukeout.github.io/) nice interactive CSS tutorial that teaches how selectors work.
 
-som [CSS concepts](http://adamschwartz.co/magic-of-css/) expalined
+some [CSS concepts](http://adamschwartz.co/magic-of-css/) explained
 
 For HTTP
 http://code.tutsplus.com/tutorials/http-the-protocol-every-web-developer-must-know-part-1--net-31177
@@ -171,4 +171,4 @@ http://code.tutsplus.com/tutorials/http-headers-for-dummies--net-8039
 
 For more on dev tools see [discover-devtools](http://discover-devtools.codeschool.com/)
 
-For genrall refrence see [w3schools](www.w3schools.com) - You can learn a lot from just reading the reference by the way.
+For general reference see [w3schools](www.w3schools.com) - You can learn a lot from just reading the reference by the way.

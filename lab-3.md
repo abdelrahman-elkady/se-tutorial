@@ -10,7 +10,7 @@
     - npm install locally
 - create package.json
     - read package.json
-    - npm install from package and adding dependencey
+    - npm install from package and adding dependency
     - npm test
     - npm run [script]
 - How to use git
@@ -18,7 +18,7 @@
 - How to write unit tests using mocha BDD.
 - Send a request to the server with jQuery
 
-After this tutorial you should know everything you need to contribute to an opernsource repo as well as run any common tutorial you find online.
+After this tutorial you should know everything you need to contribute to an open-source repo as well as run any common tutorial you find online.
 
 
 ## Requires
@@ -30,7 +30,7 @@ After this tutorial you should know everything you need to contribute to an oper
 - nodejs
 - git
 - A github account
-- npm packges mocha, chai, superagent? instanbule
+- npm packges mocha, chai, superagent? Istanbul
 
 ## Pre
 
@@ -38,18 +38,18 @@ After this tutorial you should know everything you need to contribute to an oper
 - Do [try.github.io](https://try.github.io) (15min)
 - Do [this nice visualization](http://pcottle.github.io/learnGitBranching/) (you can do just the first 8 levels)
 
-## Tutroial Guide
+## Tutorial Guide
 
-Ok so now that we have some files and a server but we're not the only people working on the project.
+OK so now that we have some files and a server but we're not the only people working on the project.
 
 When working with other people some considerations need to be made.
 
-- Not a single person is aware of the whole project so writing good documentation, clean code, and tests becomes even more important as we will accedentlly break code.
+- Not a single person is aware of the whole project so writing good documentation, clean code, and tests becomes even more important as we will accidentally break code.
 - We need a process for collaboration.
 
-In this lab we will get you familiar with git and the git flow while writing some tests for our project and talking about some maintenense practice.
+In this lab we will get you familiar with git and the git flow while writing some tests for our project and talking about some maintenance practice.
 
-If you have problems with git, still didn't install ubuntu, you can use the temporary cloud based linux instanse provided by [c9.io](c9.io)
+If you have problems with git, still didn't install ubuntu, or still didn't install git, you can use the temporary cloud based linux instance provided by [c9.io](c9.io)
 
 
 ### Gitting the SE tutorial
@@ -85,7 +85,7 @@ draz at apples-MacBook-Pro.local  ~/se-project/se-tutorial on master
 $ git checkout lab-3-start
 ```
 
-This labs starts off where we left off in our previous lab you have a server.js file and some test.js files which we used to try out some javacript.
+This labs starts off where we left off in our previous lab you have a server.js file and some test.js files which we used to try out some javascript.
 
 ### Git ready
 

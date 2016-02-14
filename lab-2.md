@@ -20,18 +20,18 @@
 
 - Once again you can help us help you get started prior to joining the lab by completing the following [interactive mongodb tutorial](http://mongly.openmymind.net/tutorial/index)
 - You can also learn quite a bit from the first week in the [edx course](https://www.edx.org/course/introduction-mongodb-using-mean-stack-mongodbx-m101x)
-- Read [this articel on javascript](mdn-re-intro-to-js) to get familiar with the syntax.
+- Read [this article on javascript](mdn-re-intro-to-js) to get familiar with the syntax.
 
 ## Tutroial Guide
 
 At this point you should have a unix system if not you can follow along on [c9.io](c9.io)
-    - create a curom instance
+    - create a custom instance
     - [install mongodb](https://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/)
     - run mongod and create a new terminal window to follow along
 
 ### Mongodb
 
-Mnogodb is a NoSQL, Schemaless, document based database, it uses javascript syntax which makes it very convinient for the course, its syntax is also very simple
+Mnogodb is a NoSQL, Schema-less, document based database, it uses javascript syntax which makes it very convenient for the course, its syntax is also very simple
 
 You can skim through this section if you already completed this [interactive mongodb tutorial](http://mongly.openmymind.net/tutorial/index) (30 min)
 However you still need to run the commands so that you have an identical db.
@@ -51,7 +51,7 @@ $ mongod --dbpath ./data
 
 This will start the mongodb database on port 27017
 
-In ubuntu after installation mongodb is registered as a service and an init.d file is added to your start scripts which starts mongodb in the background autimatically
+In ubuntu after installation mongodb is registered as a service and an init.d file is added to your start scripts which starts mongodb in the background automatically
 
 From here just open a new tab and leave the mongodb instance running `cmd+t` in your terminal, when you close the tab running the database the datase will stop working.
 
@@ -71,15 +71,15 @@ connecting to: test
 ```
 
 
-> Note: that right now you are in a shell mode commmands like `cd` and `ls` won't work.
+> Note: that right now you are in a shell mode commands like `cd` and `ls` won't work.
 
-> If you get an error and you are an ubuntu user run `service mongodb start` mac users see previous section. For furthur issues consolt TA.
+> If you get an error and you are an ubuntu user run `service mongodb start` mac users see previous section. For further issues consult TA.
 
 #### Using databases
 
 By default when you open the console you will connect to a test database though if you don't use it it won't show
 
-The mongodb documentation library is pretty good and you would generally get it as the first result when googleing for how to do stuff.
+The mongodb documentation library is pretty good and you would generally get it as the first result when goggling for how to do stuff.
 
 To see the databases in your current running mongdb instance type `show dbs`
 
@@ -135,9 +135,9 @@ To insert a document into the database we type
 db.collection_name.insert({key:value, ...})
 ```
 
-`db` referes to the currently active database.
+`db` refers to the currently active database.
 
-`collection_name` is the name of the collection we want to refer to, mongodb will autimatically use it if it exists and create a new collection if it doesn't exist.
+`collection_name` is the name of the collection we want to refer to, mongodb will automatically use it if it exists and create a new collection if it doesn't exist.
 
 `insert()` is a function that takes as a parameter an JSON object.
 
@@ -185,7 +185,7 @@ You should see
 >
 ```
 
-> Note how we simply didn't include comments in both records and even wrote likes as a string in the second entry, this is because as we mentioned in mongodb documents are schemaless.
+> Note how we simply didn't include comments in both records and even wrote likes as a string in the second entry, this is because as we mentioned in mongodb documents are schema-less.
 
 #### Find
 
@@ -219,7 +219,7 @@ for more on the syntax see [mongodb](https://docs.mongodb.org/v3.0/reference/met
 
 To exit the mongo shell type `Ctrl+C` (both mac and linux) which will allow you to exit the shell.
 
-> `Ctrl+C` generally allows you to terminate any runing process in the terminal and can be used to cancel a command.
+> `Ctrl+C` generally allows you to terminate any running process in the terminal and can be used to cancel a command.
 
 > Note some shells like python you exist with `Ctrl+Z`, `Ctrl+D`, or `Ctrl+X`.
 
@@ -248,7 +248,7 @@ $ node
 >
 ```
 
-In this mode you can type javascript and it will get autimatically executed, eg:
+In this mode you can type javascript and it will get automatically executed, eg:
 
 ```js
 > 1 + 2
@@ -332,12 +332,12 @@ function name (argument) {
 }
 ```
 
-another way of defining a function is the function expression (like arethmatic expression)
+another way of defining a function is the function expression (like arithmetic expression)
 
 ```js
 var a = 1;
 ```
-Is called an arethmatic expression where a is now a variable pointing towards the number 1 in memory;
+Is called an arithmetic expression where a is now a variable pointing towards the number 1 in memory;
 
 similarly
 
@@ -354,7 +354,7 @@ Now `log` is a variable that references the function we created
 ```js
 // we are in test.js
 console.log(log)
-// prints [Function] inticating it's a Function Object
+// prints [Function] indicating it's a Function Object
 ```
 
 We can call it by using `()`.
@@ -475,7 +475,7 @@ Server listening on: http://localhost:8080
 
 You can now visit [localhost:8080](http://localhost:8080) and you will see your response.
 
-> You Do: Have the server log and count everytime a user visites your site.
+> You Do: Have the server log and count every-time a user visits your site.
 
 #### Node Serve index.html
 
@@ -566,7 +566,7 @@ mongo.connect('mongodb://localhost:27017/app', function (err, db) {
 var handleRequest = function handleRequest(request, response){
     if (request.url==='/index.html') {
         response.writeHeader(200, {'Content-type':'text/html'});
-        response.end(fs.readFileSync('./index.html'));
+        response.end(fs.readFileSync('./app/index.html'));
     } else if(request.url==='/posts') {
         response.writeHeader(200, {'Content-type':'application/json'});
         DB.collection('posts').find().toArray(function (err, users) {
@@ -586,7 +586,7 @@ server.listen(PORT, function(){
 
 ```
 
-JSON.strigify converts arrays and objects into strings (response.end take only a string or a file stream).
+JSON.stringify converts arrays and objects into strings (response.end take only a string or a file stream).
 
 This line
 ```
@@ -595,7 +595,7 @@ mongo.connect('mongodb://localhost:27017/app', ...
 
 As previously mentioned the database by default will run on port 27017 and we want to use the app database, hence the url.
 
-You can now stop the node server in the termainl with `Ctrl+C` and restart it with `node server.js`
+You can now stop the node server in the terminal with `Ctrl+C` and restart it with `node server.js`
 
 
 ## Post Tutorial
