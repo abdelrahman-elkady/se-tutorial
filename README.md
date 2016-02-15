@@ -30,13 +30,15 @@ This repo is cloned by each tutorial group in the beginning of the lab and is us
 
 The course assumes a UNIX shell (Either mac or linux), accordingly if you're a windows user you are requested to setup a UNIX environment follow one of the following guides
 
-1. [create a bootable usb](http://www.everydaylinuxuser.com/2015/11/how-to-create-ubuntu-1510-usb-drive.html) - we encourage ubuntu 14.x but 15 will do
-2. follow the guide sutable to your windows
+1. [create a Bootable usb](http://www.everydaylinuxuser.com/2015/11/how-to-create-ubuntu-1510-usb-drive.html) - we encourage ubuntu 14.x but 15 will do
+2. follow the guide suitable to your windows
     - [in case pc was bought with windows 10](http://www.everydaylinuxuser.com/2015/11/how-to-install-ubuntu-linux-alongside.html) - specifically BIOS is (UEFI)
     - [in case you upgraded to 10](http://www.everydaylinuxuser.com/2015/11/how-to-install-ubuntu-linux-alongside_8.html) - specifically BIOS not (UEFI)
     - [in case windows 8](http://www.everydaylinuxuser.com/2014/05/install-ubuntu-1404-alongside-windows.html)
     - [in case windows 7](http://linux.about.com/od/LinuxNewbieDesktopGuide/ss/The-Ultimate-Windows-7-And-Ubuntu-Linux-Dual-Boot-Guide.htm)
     - [General case if the above doesn't apply](https://help.ubuntu.com/community/WindowsDualBoot)
+3. if when installing Ubuntu you do not get the option to install along side windows install custom you will need to create 3 partitions one for boot, one for sawp and one for root (/boot, swap, /) respectively boot only needs 200MB swap should be the size of your RAM and home is bigger then 6GB preferably 40 GB should be goo enough.
+4. after you're don installing you [can Boot repair](https://help.ubuntu.com/community/Boot-Repair)
 
 > In case you can't install ubuntu for some reason you can follow along on c9.io by creating a custom workspace.
 
