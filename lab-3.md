@@ -125,7 +125,7 @@ We will use the git status command to continue to monitor the state between the 
 
 It is time to change our hello program to take an argument from the command line. Change the file to be:
 
-Add a simple Hello world call `to console.log()`.
+Add a simple Hello world call to `console.log()`.
 
 ```
 // hello.js
@@ -372,7 +372,8 @@ $ git commit -m "Added Comment"
 
 
 
-### Gitting started using the SE tutorial
+
+### Using the SE tutorial
 
 In order to get started with the tutorial you can visit one of the forks on your tutorial's organization on github
 
@@ -382,6 +383,7 @@ In order to get started with the tutorial you can visit one of the forks on your
 - https://github.com/se-2016-c-13/se-tutorial.git
 - https://github.com/se-2016-c-14/se-tutorial.git
 - https://github.com/se-2016-c-15/se-tutorial.git
+- https://github.com/se-2016-c-16/se-tutorial.git
 - https://github.com/se-2016-b-15/se-tutorial.git
 - https://github.com/se-2016-b-16/se-tutorial.git
 - https://github.com/se-2016-b-17/se-tutorial.git
@@ -391,7 +393,7 @@ And clone the repo in your working folder
 
 ```
 draz at apples-MacBook-Pro.local  ~/se-project
-$ git clone https://github.com/amrdraz/se-tutorial.git
+$ git clone https://github.com/your-tutorial-organization/se-tutorial.git
 ```
 
 > switch amrdraz with your tutorial organization which should be one of the above
@@ -407,52 +409,59 @@ $ git checkout lab-3-start
 
 This labs starts off where we left off in our previous lab you have a server.js file and some test.js files which we used to try out some javascript.
 
-### Git ready
+### Collaborating
 
-Now to get familiar with git we'll make a local copy of the repo for us to experiment with without affecting the main master branch.
+Now that you know how to use git you can start contributing to our se-tutorial repo.
 
-Follow along as we simulate several situations you will deal with in your respective projects.
+Remember tho we don't ever commit to the master branch
 
 ```
-draz at apples-MacBook-Pro.local  ~/se-project/se-tutorial on master
-$ git branch gitready
+$ git branch [yourname]
 ```
 
 In order to create a new branch from the current one
 
 ```
-draz at apples-MacBook-Pro.local  ~/se-project/se-tutorial on master
-$ git checkout gitready
-draz at apples-MacBook-Pro.local  ~/se-project/se-tutorial on gitready
+$ git checkout [yourname]
 ```
 
-Now anything we do here will not affect the original project
+Now anything you do here will not affect the original project
 
+Your TA should by now should have updated the team.md file with your names.
 
-> still pending rest of lab since most peopl don't finish past this point
-
-go back to master
-
+You can check that an update was made by running
 
 ```
-draz at apples-MacBook-Pro.local  ~/se-project/se-tutorial on gitready
-$ git checkout gitready
-draz at apples-MacBook-Pro.local  ~/se-project/se-tutorial on master
+$ git fetch
 ```
 
-create a new branch with your name and add your name to the teams page
-
-Push your branch to the repo
+go back to master and pull the changes
 
 ```
-$ git push origin draz
+$ git checkout master
+$ git pull origin master
 ```
 
-submit a pull request to merge
+now merge master with your branch
+
+```
+$ git checkout [yourbranch]
+$ git merge master
+```
+
+Update team.md file with your github username and fun fact about yourself and commit. (You should know how to do this by now if you followed the tutorial so far).
+
+when you're done push your branch to the online repo.
+
+```
+$ git push origin [yourbranch]
+```
+
+You may be blocked from pushing if you're not a collaborator you should ask your TA to add you to the organization.
 
 ## Post Tutorial
 
-For more detail try following [this online tutorial book](http://gitimmersion.com), you don’t need to have ruby installed as you never run the files you create.
+For more detail try following [this online tutorial book](http://gitimmersion.com), which I used to build most of the content in this tutorial.
 
 
 
