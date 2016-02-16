@@ -260,7 +260,7 @@ If you get vim (another editor) you can do the following.
 
 Press `i` key on your keyboard to enter a message then the `esc` key to go back into command mode followed by typing `:wq` which stands for write and quite.
 
-You should then see this in the terminal
+You should then see something like this in the terminal
 
 ```
 $ git commit
@@ -268,7 +268,7 @@ $ git commit
  1 file changed, 1 insertion(+)
 ```
 
-Finally let’s check the status again.
+Finally lets check the status again.
 
 ```
 $ git status
@@ -339,7 +339,7 @@ Changes not staged for commit:
 so let's Commit the first change
 
 ```
-$ git commit -m "Added print function
+$ git commit -m "Added print function"
 [master 098ec71] Added print function
  1 file changed, 4 insertions(+), 1 deletion(-)
 ```
