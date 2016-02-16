@@ -370,8 +370,23 @@ Now commit
 $ git commit -m "Added Comment"
 ```
 
+Now create your very own online repo on github and push your repo there (call it first-repo).
 
+When you create a new repo don't add a readme or .gitignore file just create an empty one and update the remote as instructed by github.
 
+You should if you refresh your repo page now see your first repository.
+
+add locally a README.md file with something like
+
+```
+# My First repo
+```
+
+add and commit your change and then update your own repo.
+
+```
+$ git push origin master
+```
 
 ### Using the SE tutorial
 
