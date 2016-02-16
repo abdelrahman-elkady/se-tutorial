@@ -82,7 +82,9 @@ draz at apples-MacBook-Pro.local  ~/se-project/gitnode
 $ subl hello.js
 ```
 
-This should open sublime text and just save.
+This should open sublime text and just save, if you don't have sublime use `nano` instead.
+
+this will open the nano terminal editor You can edit as you like in it and save by pressing `Ctrl+X`
 
 #### Starting our repository
 
@@ -101,9 +103,6 @@ draz at apples-MacBook-Pro.local  ~/se-project/gitnode on master
 $ git add hello.js
 draz at apples-MacBook-Pro.local  ~/se-project/gitnode on master
 $ git commit -m "First Commit"
-[master (root-commit) d61e3cc] First Commit
- 1 file changed, 0 insertions(+), 0 deletions(-)
- create mode 100644 hello.js
 ```
 
 #### Check the repo's status
@@ -127,7 +126,7 @@ It is time to change our hello program to take an argument from the command line
 
 Add a simple Hello world call to `console.log()`.
 
-```
+```js
 // hello.js
 console.log("Hello World");
 ```
@@ -161,7 +160,7 @@ Changes not staged for commit:
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
-The first thing to notice is that git knows that the hello.rb file has been modified, but git has not yet been notified of these changes.
+The first thing to notice is that git knows that the hello.js file has been modified, but git has not yet been notified of these changes.
 
 Also notice that the status message gives you hints about what you need to do next. If you want to add these changes to the repository, then use the git add command. Otherwise the git checkout command can be used to discard the changes.
 
@@ -174,7 +173,7 @@ We stage files also by using the `git add` command.
 Now tell git to stage the changes. Check the status
 
 ```
-$ git add hello.rb
+$ git add hello.js
 $ git status
 ```
 
@@ -200,15 +199,15 @@ If you decide you don’t want to commit that change after all, the status comma
 
 A separate staging step in git is in line with the philosophy of getting out of the way until you need to deal with source control. You can continue to make changes to your working directory, and then at the point you want to interact with source control, git allows you to record your changes in small commits that record exactly what you did.
 
-For example, suppose you edited three files (a.rb, b.rb, and c.rb). Now you want to commit all the changes, but you want the changes in a.rb and b.rb to be a single commit, while the changes to c.rb are not logically related to the first two files and should be a separate commit.
+For example, suppose you edited three files (a.js, b.js, and c.js). Now you want to commit all the changes, but you want the changes in a.js and b.js to be a single commit, while the changes to c.js are not logically related to the first two files and should be a separate commit.
 
-You could do the following:
+For example you could do the following:
 
 ```
-git add a.rb
-git add b.rb
+git add a.js
+git add b.js
 git commit -m "Changes for a and b"
-git add c.rb
+git add c.js
 git commit -m "Unrelated change to c"
 ```
 
@@ -241,7 +240,7 @@ $ git commit
 
 Sublime should open and you can type a message. When you're done just save the file and close it.
 
-If you didn't change the editor you should see something like this in your terminal.
+If you didn't change the editor you should see nano open up again with something like this.
 
 ```
 
@@ -251,9 +250,13 @@ If you didn't change the editor you should see something like this in your termi
 # Changes to be committed:
 #   (use "git reset HEAD <file>..." to unstage)
 #
-#   modified:   hello.rb
+#   modified:   hello.js
 #
 ```
+
+Just write a message saying you changed hello.js and exit with `Ctrl+X` tap `Y` then the `Enter` key.
+
+If you get vim (another editor) you can do the following.
 
 Press `i` key on your keyboard to enter a message then the `esc` key to go back into command mode followed by typing `:wq` which stands for write and quite.
 
@@ -370,13 +373,21 @@ Now commit
 $ git commit -m "Added Comment"
 ```
 
-Now create your very own online repo on github and push your repo there (call it first-repo).
 
-When you create a new repo don't add a readme or .gitignore file just create an empty one and update the remote as instructed by github.
+- Now on to github.com and create a new repository
+- call it first-repo
+- When you create a new repo don't add a readme or .gitignore file just create an empty one
+- update the remote as instructed by github.
 
 You should if you refresh your repo page now see your first repository.
 
-add locally a README.md file with something like
+Go back to the terminal and add a README.md file
+
+```
+subl README.md
+```
+
+You should write something like 
 
 ```
 # My First repo
