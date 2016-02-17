@@ -53,7 +53,7 @@ If you have problems with git, still didn't install ubuntu, or still didn't inst
 2. login to cloud9 with your github account and create a custom workspace.
 
 
-### Gitting started with a simple project
+### Git-ting started with a simple project
 
 If this is your first time using git you will need to configure your computer.
 
@@ -66,32 +66,29 @@ $ git config --global user.email "your_email@whatever.com"
 
 #### Create a folder
 
-Create a Folder Called gitnode and `cd` into it
+Create a Folder Called for example gitnode and `cd` into it
 
 ```
-draz at apples-MacBook-Pro.local  ~/se-project
 $ mkdir gitnode
-draz at apples-MacBook-Pro.local  ~/se-project
 $ cd gitnode     
 ```
 
-Now add a single file and call it `hello.js`
+Now open sublime in the current folder and add a single file and call it `hello.js`
 
 ```
-draz at apples-MacBook-Pro.local  ~/se-project/gitnode
+$ subl .
 $ subl hello.js
 ```
 
 This should open sublime text and just save, if you don't have sublime use `nano` instead.
 
-this will open the nano terminal editor You can edit as you like in it and save by pressing `Ctrl+X`
+This will open the **nano** terminal editor You can edit as you like in it and save by pressing `Ctrl+X` represented as `^X` then `Y` then confirm the file name and pres `Enter`.
 
 #### Starting our repository
 
 You now have a directory with a single file. To create a git repository from that directory, run the git init command.
 
 ```
-draz at apples-MacBook-Pro.local  ~/se-project/gitnode
 $ git init
 Initialized empty Git repository in /Users/draz/se-project/gitnode/.git/
 ```
@@ -99,9 +96,7 @@ Initialized empty Git repository in /Users/draz/se-project/gitnode/.git/
 Now add the `Hello, World` program to the repository.
 
 ```
-draz at apples-MacBook-Pro.local  ~/se-project/gitnode on master
 $ git add hello.js
-draz at apples-MacBook-Pro.local  ~/se-project/gitnode on master
 $ git commit -m "First Commit"
 ```
 
@@ -110,7 +105,6 @@ $ git commit -m "First Commit"
 Use the git status command to check the current status of the repository.
 
 ```
-draz at apples-MacBook-Pro.local  ~/se-project/gitnode on master
 $ git status
 On branch master
 nothing to commit, working directory clean
@@ -124,17 +118,18 @@ We will use the git status command to continue to monitor the state between the 
 
 It is time to change our hello program to take an argument from the command line. Change the file to be:
 
-Add a simple Hello world call to `console.log()`.
+Add a simple Hello world call to `console.log()` in the `hello.js` file.
+
+You could use nano or sublime at this point.
 
 ```js
 // hello.js
 console.log("Hello World");
 ```
 
-Check everything is ok by running the file
+Check everything is ok by running the file with node
 
 ```
-draz at apples-MacBook-Pro.local  ~/se-project/gitnode
 $ node hello.js
 Hello World
 ```
@@ -142,7 +137,6 @@ Hello World
 Now check the status of the working directory.
 
 ```
-draz at apples-MacBook-Pro.local  ~/se-project/gitnode on master
 $ git status
 ```
 
@@ -180,9 +174,7 @@ $ git status
 You should see something like this
 
 ```
-draz at apples-MacBook-Pro.local  ~/se-project/gitnode on master*
 $ git add hello.js
-draz at apples-MacBook-Pro.local  ~/se-project/gitnode on master*
 $ git status
 On branch master
 Changes to be committed:
@@ -191,15 +183,17 @@ Changes to be committed:
     modified:   hello.js
 ```
 
-The change to the hello.js file has been staged. This means that git now knows about the change, but the change hasn’t been permanently recorded in the repository yet. The next commit operation will include the staged changes.
+The change to the hello.js file has been staged. This means that git now knows about the change, but the change has not been permanently recorded in the repository yet. The next commit operation will include the staged changes.
 
-If you decide you don’t want to commit that change after all, the status command reminds you that the git reset command can be used to unstage that change.
+If you decide you don't want to commit that change after all, the status command reminds you that the git reset command can be used to unstage that change.
 
 ##### Staging and Committing Cycle
 
 A separate staging step in git is in line with the philosophy of getting out of the way until you need to deal with source control. You can continue to make changes to your working directory, and then at the point you want to interact with source control, git allows you to record your changes in small commits that record exactly what you did.
 
 For example, suppose you edited three files (a.js, b.js, and c.js). Now you want to commit all the changes, but you want the changes in a.js and b.js to be a single commit, while the changes to c.js are not logically related to the first two files and should be a separate commit.
+
+> Don't actually do this it's an example
 
 For example you could do the following:
 
@@ -227,8 +221,6 @@ GIT_EDITOR environment variable
 core.editor configuration setting
 VISUAL environment variable
 EDITOR environment variable
-
-If you're using `c9.io` to follow along you should use the `-m` flag
 
 For everyone that has sublime you can configure git to use it [by following these instructions](https://help.github.com/articles/associating-text-editors-with-git/)
 
@@ -282,7 +274,7 @@ Git keeps track of changes to the file system.
 
 To see that do the following
 
-define a function `print` that will log a word
+Define a function `print` in hello.js that will log a word
 
 ```js
 // hello.js
@@ -299,7 +291,7 @@ add these changes to the staging area
 $ git add hello.js
 ```
 
-then add some comments explaining the function.
+Then add some comments explaining the function.
 
 ```js
 // hello.js
@@ -384,7 +376,7 @@ You should if you refresh your repo page now see your first repository.
 Go back to the terminal and add a README.md file
 
 ```
-subl README.md
+$ subl README.md
 ```
 
 You should write something like 
@@ -399,98 +391,137 @@ add and commit your change and then update your own repo.
 $ git push origin master
 ```
 
-### Using the SE tutorial
+### Forking the SE tutorial
 
-In order to get started with the tutorial you can visit one of the forks on your tutorial's organization on github
+In order to collaborate you will inevitably need to work with other people. we could setup a repo and add every single one of you as collaborator on a repo.
 
-- https://github.com/se-2016-c-10/se-tutorial.git
-- https://github.com/se-2016-c-11/se-tutorial.git
-- https://github.com/se-2016-c-12/se-tutorial.git
-- https://github.com/se-2016-c-13/se-tutorial.git
-- https://github.com/se-2016-c-14/se-tutorial.git
-- https://github.com/se-2016-c-15/se-tutorial.git
-- https://github.com/se-2016-c-16/se-tutorial.git
-- https://github.com/se-2016-b-15/se-tutorial.git
-- https://github.com/se-2016-b-16/se-tutorial.git
-- https://github.com/se-2016-b-17/se-tutorial.git
-- https://github.com/se-2016-dmet/se-tutorial.git
+But I don't know all your usernames, accordingly we will follow the example of how open source projects work.
 
-And clone the repo in your working folder
+You as a developer, can contribute to an open source projects like jQuery, by first __forking__ the repo on your account.
+
+A Fork is essentially a branch that belong to you and therefor you have every right to modify and push changes to it.
+
+- Before you proceed go and learn how to [fork][fork] a project on github.
+- Once you're done Fork this se-tutorial repo on the amrdraz account as you read in the article including setting up the upstream remote.
+
+Now you can list the branches you have locally
 
 ```
-draz at apples-MacBook-Pro.local  ~/se-project
-$ git clone https://github.com/your-tutorial-organization/se-tutorial.git
+$ git branch
 ```
 
-> switch amrdraz with your tutorial organization which should be one of the above
-
-After you clone cd into the repo and make sure to checkout the start of this lab by running
-
+You should see something like
 ```
-draz at apples-MacBook-Pro.local  ~/se-project
-$ cd se-tutorial
-draz at apples-MacBook-Pro.local  ~/se-project/se-tutorial on master
-$ git checkout lab-3-start
+*master
 ```
 
-This labs starts off where we left off in our previous lab you have a server.js file and some test.js files which we used to try out some javascript.
+You can see all branches by adding the --all or -a flag
+
+```
+$ git branch --all
+```
+
+which should show you something like this depending on when you had forked the repo.
+
+```
+* master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/lab-1
+  remotes/origin/lab-2
+  remotes/origin/master
+  remotes/upstream/draz
+  remotes/upstream/lab-1
+  remotes/upstream/lab-2
+  remotes/upstream/lab-3
+  remotes/upstream/master
+  remotes/upstream/se-2016-dmet
+```
+
+Since you just cloned the repo if you don't yet see everything you need to [sync][sync] your repository then try again
+
+```
+$ git fetch upstream
+$ git branch --all
+```
+
+You will have to synchronize your version of the repo often so make sure you go through the [sync][sync] article.
+
+You will notice that in addition to the lab-n branches and tags you will find a tutorial specific branch.
+
+In the se-tutorial repo you will find that I setup a branch for every tutorial
+
+- remotes/upstream/se-2016-c-10
+- remotes/upstream/se-2016-c-11
+- remotes/upstream/se-2016-c-12
+- remotes/upstream/se-2016-c-13
+- remotes/upstream/se-2016-c-14
+- remotes/upstream/se-2016-c-15
+- remotes/upstream/se-2016-c-16
+- remotes/upstream/se-2016-b-15
+- remotes/upstream/se-2016-b-16
+- remotes/upstream/se-2016-b-17
+- remotes/upstream/se-2016-dmet
+
+After running fetch you can now switch to one of them so switch to your tutorial's branch
+
+```
+$ git checkout se-2016-dmet # for example
+```
+
+If you run `git branch` you will see that it has become a local copy.
+
+Your tutorial branch is where we will practice collaboration.
 
 ### Collaborating
 
 Now that you know how to use git you can start contributing to our se-tutorial repo.
 
-Remember tho we don't ever commit to the master branch
+Remember tho we don't ever commit to the product branch in this case master and your tutorial branch is your product branches.
+
+So lets create a branch after having switched to your you tutorial. for the sake of argument I will be working with the `se-2016-dmet` branch as my starting point an using my name `draz` as the branch name.
+
+> You should use your tutorial and your name
 
 ```
-$ git branch [yourname]
+draz at apples-MacBook-Pro-2.local  ~/se-project/se-dmet on se-2016-dmet
+$ git branch draz
+$ git checkout draz
+draz at apples-MacBook-Pro-2.local  ~/se-project/se-dmet on draz
 ```
 
-In order to create a new branch from the current one
+You can tell which branch you're on if you forgot by typing
 
 ```
-$ git checkout [yourname]
+$ git branch
 ```
 
-Now anything you do here will not affect the original project
+> Notice how my terminal window says which branch I'm on you can setup your terminal to tell you which branch you're on [here][show-branch]
 
-Your TA should by now should have updated the team.md file with your names.
+#### Create an update
 
-You can check that an update was made by running
+You will find a team.md file in the repo you should add your name and username to that file.
 
-```
-$ git fetch
-```
-
-go back to master and pull the changes
-
-```
-$ git checkout master
-$ git pull origin master
-```
-
-now merge master with your branch
-
-```
-$ git checkout [yourbranch]
-$ git merge master
-```
-
-Update team.md file with your github username and fun fact about yourself and commit. (You should know how to do this by now if you followed the tutorial so far).
+You should know how to do this by now if you followed the tutorial so far.
 
 when you're done push your branch to the online repo.
 
 ```
-$ git push origin [yourbranch]
+$ git push origin draz
 ```
 
-You may be blocked from pushing if you're not a collaborator you should ask your TA to add you to the organization.
+Now learn about [pull request][pull-request]
+
+Now submit a pull request on the amrdraz/se-tutorial repository on your tutorial branch.
+
 
 ## Post Tutorial
 
-For more detail try following [this online tutorial book](http://gitimmersion.com), which I used to build most of the content in this tutorial.
-
-
+For more detail on git try following [this online tutorial book](http://gitimmersion.com), which I used to build most of the content in this tutorial.
 
 
 
 [student-form]: https://docs.google.com/forms/d/1p2NTsF4bZSSeTwakwAbNJaePHwL1VmSQMR0GESy7j2A/viewform
+[fork]: https://help.github.com/articles/fork-a-repo/
+[sync]: https://help.github.com/articles/syncing-a-fork/
+[pull-request]: https://help.github.com/articles/using-pull-requests/
+[show-branch]: https://www.leaseweb.com/labs/2013/08/git-tip-show-your-branch-name-on-the-linux-prompt/

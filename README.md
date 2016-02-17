@@ -11,18 +11,29 @@ Each person in the tutorial will be later assigned a task (issues) and asked to 
 
 ## How this works
 
-This repo is cloned by each tutorial group in the beginning of the lab and is used to track progress throughout the course.
-
-- A lab-[x].md file for each lab will be present to guide to the lab
+- A lab-[x].md file for each lab will be present as a guide to the lab
     + Every lab.md has a pre, a tutorial and post section
     + pre is for things the student should do before and is for saving time in the actual tutorial.
     + the tutorial is for making sure the student understands the objectives and is adapted based on the work done by the students so far.
     + the post section is for extra reading and extending on the topics covered.
     + each lab start and end commit is marked by a tag `lab-n-start` and `lab-n-end` where n is the lab number.
-- A branch is created wen working on a lab.
-    + TA tags the branch so that people can refer back to it in case they wanna start from that point/follow along.
-- The TA manages the fork
-- Each tutorial group maintains will have a development branch that they merge too the master branch will remain pure only for receiving updates from the original fork (this isn't a requirement normally it is just for organization).
+- A branch is created wen working on a lab for everyone to collaborate on.
+
+To visit any lesson type in the terminal
+    
+    $ git checkout lab-n-start
+
+For end of lab code
+
+    $ git checkout lab-n-end
+
+Where n is the number of the lab.
+
+You can visit subsection by typing
+
+    $ git checkout lab-n-m
+
+Where m is the number of the section in the lesson.
 
 > If there an any issues open an issue on [the original repo](https://github.com/amrdraz/se-tutorial)
 
@@ -57,22 +68,6 @@ We encourage the use of a simple yet pluggable text editor such as [sublime text
 We use Google chrome's dev tools in this course - on linux that would be chromium.
 
 ## Table of Content
-
-To visit any lesson type in the terminal
-    
-    git checkout lab-n-start
-
-For end of lab code
-
-    git checkout lab-n-end
-
-Where n is the number of the lab.
-
-You can visit subsection by typing
-
-    `git checkout lab-n-m`
-
-where m is the number of the section in the lesson.
 
 1. [Get started](./lab-1.md)
     - Get started learning HTML and CSS.
