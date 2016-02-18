@@ -26,11 +26,9 @@ After this tutorial you should know everything you need to contribute to an open
 - Internet
 - Google chrome
 - A plain text editor (preferably sublime)
-- mongodb
 - nodejs
 - git
 - A github account
-- npm packges mocha, chai, superagent? Istanbul
 
 ## Pre
 
