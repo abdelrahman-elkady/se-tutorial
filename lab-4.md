@@ -1,4 +1,4 @@
-# Lab 3
+# Lab 4
 
 ## Your Objective
 
@@ -38,7 +38,6 @@ After this tutorial you should have build a very simple To-DO list tested restfu
 - If you haven't yet fill this [form][student-form] while creating a github account
 - [Fork][fork] this repo if you haven't already
 - Complete [this tutorial][express-rest]
-- 
 - Learn JQuery
   -  [see try jquery course](http://try.jquery.com/) should take 3 hours to fully complete.
 
