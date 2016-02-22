@@ -44,15 +44,19 @@ After this tutorial you should have build a very simple To-DO list tested restfu
 ## Tutorial Guide
 
 - Complete building the [restful app][express-rest] in the pre lab test
-- Push your work as a github rep and send a link to your TA on your slack group
+    - Important before you start there are some fixes since the article is outdated.
+
+In the tutorial the author does `npm update -g express` and then later `npm update -g express-generator`. It should be `npm install -g express-generator`. You may also encounter an issue with the package.json file provided you need to change the mongodb version in it to ~1.4 instead of 2.0.1.
+
+
+- create and push your work on a github rep and send a link to your TA on your slack group
     - If you're still not on slack you did not fill this [form][student-form]
     - You should have a slack group per lab for communicating with each other and the TA as a tutorial.
 
-- Once you setup your rep and send it to your TA while you do your work you will be sent some issues on github to do (you will understand later). otherwise just proceed.
+- Once you setup your repo and send it to your TA in the lab while you do your work you will be sent some issues on github to do (you will understand later). otherwise just proceed.
 
 - Learn about testing
     + you keywords are mocha testing instanbul tutorial.
-    + 
 - Test the app you should have completed in the pre test.
 - Work on your assignment.
 - Have enriching philosophical discussions with your TA on life and ant logic, or octocats.
