@@ -171,4 +171,4 @@ http://code.tutsplus.com/tutorials/http-headers-for-dummies--net-8039
 
 For more on dev tools see [discover-devtools](http://discover-devtools.codeschool.com/)
 
-For general reference see [w3schools](www.w3schools.com) - You can learn a lot from just reading the reference by the way.
+For general reference see [w3schools]() - You can learn a lot from just reading the reference by the way.

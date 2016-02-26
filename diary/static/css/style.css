@@ -1,0 +1,21 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100%;
+    height: auto;
+}
+
+/* https://css-tricks.com/perfect-full-page-background-image/ */
+.header {
+    height: 100%;
+    width: 100%;
+    background: url(../img/header.jpeg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
