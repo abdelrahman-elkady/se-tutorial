@@ -278,7 +278,7 @@ app.listen(3000, function () {
 });
 ```
 
-To understand how `sendFile()` works see [the express api refrence](http://expressjs.com/en/api.html#res.sendFile)
+To understand how `sendFile()` works see [the express api reference](http://expressjs.com/en/api.html#res.sendFile)
 
 > Note: Make it a habit to look up things you don't know.
 
@@ -637,7 +637,7 @@ app.get('/api/post', function(req, res) {
 });
 ```
 
-And now we can update our main.js file to communicate withe the route instead.
+And now we can update our main.js file to communicate withe the get api route instead.
 
 ```js
 // main.js
@@ -653,11 +653,31 @@ $('.post-load-btn').on('click', function (event) {
 })
 ```
 
-If you get a 404 in your console then you forgot to restart the server.
+If you get a `404` in your console then you forgot to restart the server.
 
 Now that we can send requests and know we can receive a response from the server, we can get our data however we please, be it from database or file.
 
-If you recall from [lab-2](./lab-2.md) we showed you how to connect to mongodb with nodejs you can also read the mongodb npm documentation to [learn how to do that as well][[mongo-getting-started]
+If you recall from [lab-2](./lab-2.md) we showed you how to connect to mongodb with nodejs you can also read the mongodb npm documentation to [learn how to do that as well][mongo-getting-started]
+
+### Testing
+
+Writing tests is essential for long term project maintenance.
+
+In this repo you will find a small introduction of testing we will do that via a file called perfect-code.js .
+
+If you open perfect code you will see that it is indeed the epitome of perfection and there's nothing for us to do other then bask in its perfection.
+
+Yet on closer inspection you may notice something is off.
+
+In  large system this may not be so apparent and our only means of avoiding this is to write code that tests our code.
+
+You're used to doing it yourself, you probably wrote print statements in your code when solving an algorithm to see if it's working fine, well my friend let me greet you with a wide smile for you have a little software tester in you.
+
+Complete the following tutorials
+
+- [mocha test in general](http://code.tutsplus.com/tutorials/testing-in-nodejs--net-35018)
+- [test express api](https://www.codementor.io/nodejs/tutorial/testing-express-apis-with-supertest)
+
 
 ## Post Tutorial
 
@@ -667,6 +687,8 @@ If you recall from [lab-2](./lab-2.md) we showed you how to connect to mongodb w
 - Learn JQuery
     -  the folks on [w3schools](http://www.w3schools.com) have a jQuery reference.
     -  [see try jQuery course](http://try.jquery.com/) should take 3 hours to fully complete.
+
+- https://www.outlearn.com/
 
 
 [npm]: https://docs.npmjs.com/getting-started/what-is-npm
