@@ -329,7 +329,7 @@ We will start implementing our hip diary app so let's change index.html.
 </html>
 ```
 
-The [<link>](http://www.w3schools.com/tags/tag_link.asp) and [<script>](http://www.w3schools.com/tags/att_script_src.asp) tags are used to refer to external css and javascript files respectively.
+The [`<link>`](http://www.w3schools.com/tags/tag_link.asp) and [`<script>`](http://www.w3schools.com/tags/att_script_src.asp) tags are used to refer to external css and javascript files respectively.
 
 You should:-
 
@@ -341,7 +341,7 @@ You can open the index.html file in your browser by double clicking on the file,
 
 You should see something like this
 
-![diary-no-css](./assets/lab-4/dairy-no-css.png)
+![diary-no-css](./assets/lab-4/diary-no-css.png)
 
 If you're wondering what __normalize.css__ does
 
