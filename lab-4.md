@@ -54,7 +54,6 @@ To follow along this tutorial just
 $ git checkout lab-4-start
 ```
 
-
 ### What is npm
 
 The nodeJS eco-system has an abundance of packages that make carrying this forward easier and they are all stored on [npm][npm].
@@ -663,6 +662,8 @@ If you recall from [lab-2](./lab-2.md) we showed you how to connect to mongodb w
 ## Post Tutorial
 
 - You can try other tutorials to get a fresh perspective [restful app][express-rest] just Google `node rest app tutorial` or any other variations.
+    - In the tutorial the author does `npm update -g express` and then later `npm update -g express-generator`. It should be `npm install -g express-generator`. You may also encounter an issue with the package.json file provided you need to change the mongodb version in it to ~1.4 instead of 2.0.1.
+
 - Learn JQuery
     -  the folks on [w3schools](http://www.w3schools.com) have a jQuery reference.
     -  [see try jQuery course](http://try.jquery.com/) should take 3 hours to fully complete.
