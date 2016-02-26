@@ -659,6 +659,14 @@ Now that we can send requests and know we can receive a response from the server
 
 If you recall from [lab-2](./lab-2.md) we showed you how to connect to mongodb with nodejs you can also read the mongodb npm documentation to [learn how to do that as well][mongo-getting-started]
 
+If you got lost you can
+
+```
+$ git checkout lab-4-end
+```
+
+Which will contain final code for this lesson.
+
 ### Testing
 
 Writing tests is essential for long term project maintenance.
