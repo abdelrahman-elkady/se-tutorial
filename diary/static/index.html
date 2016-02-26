@@ -1,38 +1,27 @@
 <!DOCTYPE html>
 <html>
+
 <head lang='en'>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>My Diary</title>
-    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" />
     <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
-    <header class="header">
-        <h1>Thoughts for my sanity</h1>
-        <h2>Sharing posts I find interesting</h2>
+    <header class="header flex-align">
+        <h1 class="align-item">Thoughts for my sanity</h1>
     </header>
+    <button class="post-load-btn">Load Post</button>
     <section class="post-list">
-        <div class="post-list-item">
-            <h3>Cool Song</h3>
-            <p>
-                A short summery of my brilliant article on bananas
-            </p>
-        </div>
-        <div class="post-list-item">
-            <h3>Another thought</h3>
-            <p>
-               More thoughts about things I think about
-            </p>
-        </div>
+        <article class="post-list-item">
+            <h3 class="post-list-item-header">This is an example of a post</h3>
+            <section class="post-list-item-body">
+                We will populate this with ajax later but sometimes it is better to start off designing statistically before we go dynamic
+            </section>
+        </article>
     </section>
-    <article class="post">
-        <h3>Cool Song</h3>
-        <div class="content">
-            
-        </div>
-    </article>
+    <script src="js/jquery-2.2.1.min.js"></script>
     <script src="js/main.js"></script>
 </body>
+
 </html>

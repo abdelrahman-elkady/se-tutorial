@@ -295,7 +295,7 @@ Your directory should now look like this
 ```
 
 
-### Serving Static Files
+### Static Files
 
 A static resource page is a page that is served as is and was not generated pragmatically.
 
@@ -310,54 +310,355 @@ We will start implementing our hip diary app so let's change index.html.
 <html>
 <head>
     <title>My Diary</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" />
     <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
     <header>
         <h1>Thoughts for my sanity</h1>
-        <h2>Sharing posts I find interesting</h2>
     </header>
+    <section class="post-list">
+        <article class="post-list-item">
+            <h3 class="post-list-item-header">This is an example of a post</h3>
+            <section class="post-list-item-body">
+                We will populate this with ajax later but sometimes it is better to start off designing statistically before we go dynamic
+            </section>
+        </article>
+    </section>
     <script src="js/main.js"></script>
 </body>
 </html>
 ```
 
-The `<link>` and `<source>` tags are used to refer to external css and javascript files respectively.
+The [<link>](http://www.w3schools.com/tags/tag_link.asp) and [<script>](http://www.w3schools.com/tags/att_script_src.asp) tags are used to refer to external css and javascript files respectively.
 
 You should:-
 
 1. Add a `css` and `js` folder to your static file directory.
-2. Add a `style.css` file in your css folder
-3. Add a `main.js` file in your js folder
+2. Add a `style.css` empty file in your css folder
+3. Add a `main.js` empty file in your js folder
 
-You can oppen the index.html file in your browser by double clicking on the file, dragging it to the browser or if this  ubuntu running
+You can open the index.html file in your browser by double clicking on the file, dragging it to the browser.
 
+You should see something like this
+
+![diary-no-css](./assets/lab-4/dairy-no-css.png)
+
+If you're wondering what __normalize.css__ does
+
+```html
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" />
 ```
-$ firefox static/index.html
-```
 
-Assuming you're in the diary app directory
+Then you're asking the right questions and I salute your constructive curiosity, you can find out by [goggling of course](http://lmgtfy.com/?q=normalize.css).
 
-Add the following to your style.css file
+You might also notice we're not referring to it from our local file system but from another website.
+
+This will help illustrate a point later.
+
+Try removing the nomralize.css link tag to see how the site looks without it
+
+![no normalize](./assets/lab-4/diary-no-cdn.png)
+
+Now put it back and add the following to your `style.css` file
 
 ```css
+* {box-sizing: border-box;}
+html {
+    height: 100%;
+}
+body {
+    min-height: 100%;
+    color: #222;
+    line-height: 1.5;
+    background: #eee;
+}
+.header {
+    height: 500px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+    background-color: #345;
+    /* https://css-tricks.com/perfect-full-page-background-image/ */
+    background: url(../img/header.jpeg) no-repeat center center fixed;
+    background-size: cover;
+
+    margin-bottom: 10px;
+}
+.header h1 {
+    max-width: 50%;
+    color: #fff;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.3);
+    font-size: 4em;
+    font-weight: 200;
+    font-family: cursive;
+}
+.post-list {
+    margin: 0 auto;
+}
+.post-list-item {
+    overflow:auto;
+    margin: 10px auto;
+    width: 50%;
+    box-shadow: 1px 1px 5px rgba(49, 21, 4, 0.4);
+    min-height: 140px;
+    padding: 20px 20px;
+}
+.post-list-item-header {
+    padding: 0 0 10px 10px;
+    font-weight: 200;
+    font-size: 2em;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    margin-top: 10px;
+}
+.post-list-item-body {
+    padding: 0 10px;
+}
 ```
 
-If we run our server and visit `http://localhost:3000` however we will see our html.
 
+> The image in the background is found in the repo under `assets/diary-app/header.jpeg`
+
+If you refresh your web page right now you should now see something like this.
+
+![styled page](./assets/lab-4/diary-app.png)
+
+### Express exposing a static directory
+
+If we now go back to our terminal, run our server and visit `http://localhost:3000` we will see the page unstyled.
+
+![diary-no-css](./assets/lab-4/dairy-no-css.png)
+
+But you may notice that normalize is still active, this is because it is served from another server, the problem has to do with our server.
+
+You can tell if there are errors in the browser by opening the developer tools and looking in the console tab (right click and inspect element)
+
+![](./assets/lab-4/diary-css-404.png)
+
+You should see that the server is responding with a 404 in the networks tab
+
+![](./assets/lab-4/networks-css-404.png)
+
+This is because we only told express to serve a file when we visit `/` and no other route was defined.
+
+We could add this to our app.js
+
+```js
+app.get('/css/style.css', function(req, res) {
+   res.sendFile(__dirname + '/static/css/style.css'); 
+});
 ```
-$ firefox static/index.html
-```
 
-Assuming you're inside the diary directory.
+But it is unreasonable to have to define a new route for every new file we want to serve.
 
-let's add a static folder to our project in order to serve some files in our journal.
+Instead we can expose a static directory
 
-If you're following along you will notice that our 
-So once again we want to serve
 You might want to read about how the [express routes work](http://expressjs.com/en/starter/basic-routing.html) and how you can set a static [folder in express][express-static]
 
+In fact since our index.html is static file we no longer need to define it's route. your app.js should look like this.
+
+```js
+var express = require('express');
+var app = express();
+
+app.use(express.static('./static'));
+
+app.listen(3000, function () {
+  console.log('Example app listening on port 3000!');
+});
+```
+
+Restart your server and refresh your webpage everything should now look dandy.
+
+We This have created a simple static server now everything you put in your static folder will be accessible through your site.
+
+### Static Dynamic Sites
+
+It is possible to manipulate our web page using JavaScript.
+
+For instance we can select our post header and change its text like so.
+
+Add this to your main.js file
+
+```js
+document.querySelector('.post-list-item-header').innerHtml = "Title added with javascript";
+```
+
+> If you're thinking I don't understand what document.querySelector means or innerHTML, Then congratulations once again you are right you shouldn't maybe goggling what they are may enlighten you.
+
+Now how about you add to your javascript file some code that will select the body of the post and update it to say something like `"This body text was also modified with javascript"`.
+
+#### JQuery select/update
+
+We can make our code look smaller along with simplifying some functionality later by using JQuery.
+
+First You will need to add jQuery to our webpage I'll leave it up to you to figure that one out.
+
+> In case you still didn't click this [link for shame](http://lmgtfy.com/?q=add+jquery+to+my+page)
+
+> Note: You should add it before our main.js script since it depend on it.
+
+Your main.js should now look like this
+
+```js
+$('.post-list-item-header').html("Title added with JavaScript");
+$('.post-list-item-body').html("This post's body text was populated with javascript too");
+```
+
+Preview your webapp in the browser to make sure everything works.
+
+![](./assets/lab-4/diary-jquery-update.png)
+
+In case something is wrong just open the browser console and see if there are any errors and resolve them, Google is your friend.
+
+
+#### Event triggered actions
+
+Right now our post is updated immediately on page load. We can change that by having it update only when a certain event is triggered.
+
+We will add a button to our page just before our `post-list` section.
+
+```html
+<button class="post-load-btn">Load Post</button>
+```
+
+Add this to your `styles.css` file
+
+```css
+.post-load-btn {
+    margin: 0 auto;
+    display: block;
+    cursor: pointer;
+    width: 50%;
+    font-size: 2em;
+    background: #3C3C3C;
+    color: #fff;
+    border: none;
+    box-shadow: 1px 1px 5px rgba(49, 21, 4, 0.4);
+}
+.post-load-btn:hover {
+    background-color: #555;
+}
+```
+
+##### Update on click
+
+Now in our main.js add a click event that updates the post on click.
+
+```js
+// main.js
+$('.post-load-btn').on('click', function (event) {
+    $('.post-list-item-header').html("Title added with JavaScript");
+    $('.post-list-item-body').html("This post's body text was populated with javascript too");
+});
+```
+
+> It is possible to trace your code by typing using `console.log()` to check that everything is working fine.
+
+Test your code, check the browser console for errors.
+
+### Ajax
+
+It is generally a good idea to model our data which makes it easier to scale our code.
+
+We will clean up main.js to look like this
+
+```js
+// main.js
+var post = {
+    "header": "Title added with JavaScript",
+    "body": "This post's body text was populated with JavaScript too"
+};
+
+$('.post-load-btn').on('click', function (event) {
+    $('.post-list-item-header').html(post.header);
+    $('.post-list-item-body').html(post.body);
+});
+```
+
+Now that we abstracted away our data from our code we can think of different ways of getting the data.
+
+When populating our post data we may want to load this data form somewhere else, say a database for example.
+
+To do this we use a technology called AJAX which allows us to load data asynchronously without reloading the page.
+
+#### Data from a JSON file
+
+So first let's take out out post data and move it to another file say post.json
+
+Add a post.json file to our static folder
+
+```json
+{
+    "header": "Title added with Ajax from a JSON file",
+    "body": "This post's body text was populated with JavaScript"
+}
+```
+
+And now let's get it with [AJAX](http://www.w3schools.com/jquery/ajax_ajax.asp)
+
+```js
+//main.js
+$('.post-load-btn').on('click', function (event) {
+    $.ajax({
+        url: 'post.json',
+        success: function (post) {
+            $('.post-list-item-header').html(post.header);
+            $('.post-list-item-body').html(post.body);
+        }
+    });
+});
+```
+
+> Note: You don't need jQuery to do ajax calls jQuery just provides a nice syntax for executing ajax requests that's all.
+
+> Note: just like we loaded a json file with ajax we can load a css, html, text, javascript or any other file.
+
+### Loading dynamic data
+
+The data we load may not be static like our html and css files.
+
+In practice our data will probably be loaded from a database or file and modified later.
+
+This is where we need to define routes in our express app to handle these various cases.
+
+Let's add a get route `/api/post` which returns a json response
+
+```js
+// app.js
+
+app.get('/api/post', function(req, res) {
+    var post = {
+        "header": "Title added with Ajax from a /api/post route",
+        "body": "This post's body text was populated with JavaScript"
+    }
+    res.send(post)
+});
+```
+
+And now we can update our main.js file to communicate withe the route instead.
+
+```js
+// main.js
+
+$('.post-load-btn').on('click', function (event) {
+    $.ajax({
+        url: 'api/post',
+        success: function (post) {
+            $('.post-list-item-header').html(post.header);
+            $('.post-list-item-body').html(post.body);
+        }
+    });
+})
+```
+
+If you get a 404 in your console then you forgot to restart the server.
+
+Now that we can send requests and know we can receive a response from the server, we can get our data however we please, be it from database or file.
+
+If you recall from [lab-2](./lab-2.md) we showed you how to connect to mongodb with nodejs you can also read the mongodb npm documentation to [learn how to do that as well][[mongo-getting-started]
 
 ## Post Tutorial
 
@@ -376,7 +677,7 @@ You might want to read about how the [express routes work](http://expressjs.com/
 [express-install]: http://expressjs.com/en/starter/installing.html
 [express-hello]: http://expressjs.com/en/starter/hello-world.html
 [express-static]: http://expressjs.com/en/starter/static-files.html
-
+[mongo-getting-started]: http://mongodb.github.io/node-mongodb-native/2.1/getting-started/
 [student-form]: https://docs.google.com/forms/d/1p2NTsF4bZSSeTwakwAbNJaePHwL1VmSQMR0GESy7j2A/viewform
 [fork]: https://help.github.com/articles/fork-a-repo/
 [sync]: https://help.github.com/articles/syncing-a-fork/
