@@ -428,7 +428,7 @@ If you refresh your web page right now you should now see something like this.
 
 If we now go back to our terminal, run our server and visit `http://localhost:3000` we will see the page unstyled.
 
-![diary-no-css](./assets/lab-4/dairy-no-css.png)
+![diary-no-css](./assets/lab-4/diary-no-css.png)
 
 But you may notice that normalize is still active, this is because it is served from another server, the problem has to do with our server.
 
@@ -456,7 +456,7 @@ Instead we can expose a static directory
 
 You might want to read about how the [express routes work](http://expressjs.com/en/starter/basic-routing.html) and how you can set a static [folder in express][express-static]
 
-In fact since our index.html is static file we no longer need to define it's route. your app.js should look like this.
+In fact since our index.html is static file we no longer need to define its route. your app.js should look like this.
 
 ```js
 var express = require('express');
