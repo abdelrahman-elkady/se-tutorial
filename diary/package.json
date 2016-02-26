@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "author": "Amr Draz <amr.m.draz@gmail.com>",
   "scripts": {
-    "start": "node app.js"
+    "start": "nodemon server.js"
   },
   "dependencies": {
     "express": "^4.13.4",
