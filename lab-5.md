@@ -726,7 +726,9 @@ $ git commite -m "is using hjs as view engine"
 
 We will use bootstrap to build a form to submit into the server, I went and got [a material theme](https://bootswatch.com/paper/) which is compatible with the flat design we're going for.
 
-Create a form with title and content as inputs and submit submit to `/posts` with method post add body parser to express and create a new post
+Create a form with title and content as inputs and submit submit to `/posts` with method post add body parser to express and create a new post.
+
+create a post.hjs page displaying the post and have each link link to it's page
 
 
 
