@@ -403,7 +403,7 @@ In case you were not following along or had any trouble you can continue from he
 $ git checkout lab-5-2
 ```
 
-#### Origin
+#### Background
 
 Have you ever printed something like.
 
@@ -485,9 +485,37 @@ var post_html = `<article class="post-list-item">
 </article>`;
 ```
 
-This abstraction comes in handy when we start repeating ourselves when we have more then one post.
+This abstraction comes in handy when we start repeating ourselves example having more then one post, we can create a function that will render this template for us
 
 ```js
+var post Template = function(post) {
+    return `<article class="post-list-item">
+    <h3 class="post-list-item-header">${post.title}</h3>
+    <section class="post-list-item-body">
+        ${post.content}
+    </section>
+</article>`;
+}
+
+var post_html = postTemplate({
+    title: 'This is an example of a post',
+    content: 'We will populate this with ajax later but sometimes it is better to start off designing statistically before we go dynamic'
+})
+```
+
+We can then create function for rendering posts.
+
+```js
+var postsTemplate = function(posts){
+    var postsHtml =  ""
+    for (var i=0; i< posts.length;i++) {
+        postsHtml += postTemplate(posts[i]);
+    }
+    return `<section class="post-list">
+    ${postsHtml}
+</section>`
+};
+
 var posts = [
     {
         title: 'This the first post',
@@ -498,55 +526,224 @@ var posts = [
         content: 'second post has more insight into the human spirit'
     },
 ]
-var postsHtml = posts.reduce(function (html, post) {
-    return html + `<article class="post-list-item">
+var html = postsTemplate(posts)
+```
+
+#### Serving a dynamic page
+
+We could re-write our app.js to serve a dynamic page response using the idea of templates.
+
+Once again since we're working on a new feature so that we don't ruin anything let's create a new branch
+
+```
+$ git checkout -b user-templates
+```
+
+Add an index.js route in your routes folder.
+
+```js
+// routes/index.js
+var express = require('express');
+var router = express.Router();
+
+router.get('/', function(req, res, next) {
+    var html = indexTemplate([
+        {
+            title: 'This the first post',
+            content: 'First post'
+        },
+        {
+            title: 'This a second post',
+            content: 'second post has more insight into the human spirit'
+        },
+    ]);
+    res.set('Content-Type', 'text/html');
+    res.send(html);
+});
+
+var indexTemplate = function (posts) {
+    return `<!DOCTYPE html>
+<html>
+
+<head lang='en'>
+    <title>My Diary</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <header class="header flex-align">
+        <h1 class="align-item">Thoughts for my sanity</h1>
+    </header>
+    <button class="post-load-btn">Load Post</button>
+    ${postsTemplate(posts)}
+    <script src="js/jquery-2.2.1.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>`;
+}
+
+var postsTemplate = function(posts){
+    var postsHtml =  ""
+    for (var i=0; i< posts.length;i++) {
+        postsHtml += postTemplate(posts[i]);
+    }
+    return `<section class="post-list">
+    ${postsHtml}
+</section>`
+};
+
+var postTemplate = function(post) {
+    return `<article class="post-list-item">
     <h3 class="post-list-item-header">${post.title}</h3>
     <section class="post-list-item-body">
         ${post.content}
     </section>
 </article>`;
-}, "")
-var html = `<section class="post-list">
-    ${postsHtml}
-</section>`
+}
+
+module.exports = router;
 ```
 
-### Serving a dynamic page
+And change app.js as follows
 
-We could write our app.js to serve a dynamic page response using the idea of templates.
+```
+// app.js
+var express = require('express');
+var app = express();
+var db = require('./db.js');
 
-Add an index.js route in your routes folder.
+app.use(require('./routes/index'));
+app.use(require('./routes/posts'));
 
-```js
-// posts
+app.use(express.static('static'));
+
+module.exports = app;
+```
+
+Now if we start our app we should see the index page render the posts we wrote in the index route
+
+> You Do: modify the seed function to insertMany posts and load them from the db when we visit the index route.
+
+When you're done test and commit
+
+```
+$ git add routes
+$ git add app.js
+$ git commite -m "dynamically load /"
+```
+
+
+#### Hogan
+
+Hogan is a template language, usually this means that it provides additional features like control flow statement on top of the abstraction of using variables. You can learn more form the [hogan site][hogan]
+
+> Note: other popular node template languages include jade, ejs, and nunjucks
+
+Hogan does not provide logic statements unlike the other tho
+
+```
+$ npm install hjs --save
+```
+
+We will separate our templates form our route them to their own file in its own file.
+we will place this file in a new directory called views as a means of indicating.
+
+Express has the option of setting a template engine so we will modify our app.js and add
+
+```
+app.set('views', __dirname + '/views');
+app.set('view engine', 'hjs');
+```
+
+just before we start using the routes.
+
+We also set `views/index.hjs`
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head lang='en'>
+    <title>My Diary</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <header class="header flex-align">
+        <h1 class="align-item">Thoughts for my sanity</h1>
+    </header>
+    <button class="post-load-btn">Load Post</button>
+    <section class="post-list">
+        {{#posts}}
+        <article class="post-list-item">
+            <h3 class="post-list-item-header">{{title}}</h3>
+            <section class="post-list-item-body">
+                {{content}}
+            </section>
+        </article>
+        {{/posts}}
+    </section>
+    <script src="js/jquery-2.2.1.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
+```
+
+Finally in `routes/index.js` we
+
+```
+var express = require('express');
+var router = express.Router();
+var db = require('../db');
+
 router.get('/', function(req, res, next) {
-    DB.collection('post').findOne(function(err, post) {
+    db.db().collection('post').find().toArray(function(err, posts) {
         if (err) return next(err);
-        res.send(post);
+        res.render('index', {posts: posts});
     });
 });
+
+module.exports = router;
 ```
+
+checkout your website to check that everything is ok you should be seeing the posts.
+
+```
+$ git add routes
+$ git add app.js
+$ git add package.json
+$ git add views
+$ git commite -m "is using hjs as view engine"
+```
+
+### Bootstrap
+
+[Bootstrap][bootstrap] is a collection of predefined css that is open for you to reuse. The idea is that you would use the bootstrap classes to style your html without having to go through all the details that will ensure cross browser consistency. To learn about it simply read tier [very good documentations](http://getbootstrap.com/getting-started/) a or this [w3schools][w3bootstrap].
+
+We will use bootstrap to build a form to submit into the server, I went and got [a material theme](https://bootswatch.com/paper/) which is compatible with the flat design we're going for.
+
+Create a form with title and content as inputs and submit submit to `/posts` with method post add body parser to express and create a new post
+
+
+
+
+
 
 ## Post Tutorial
 
-- You can try other tutorials to get a fresh perspective [restful app][express-rest] just Google `node rest app tutorial` or any other variations.
-    - In the tutorial the author does `npm update -g express` and then later `npm update -g express-generator`. It should be `npm install -g express-generator`. You may also encounter an issue with the package.json file provided you need to change the mongodb version in it to ~1.4 instead of 2.0.1.
 
-- Learn JQuery
-    -  the folks on [w3schools](http://www.w3schools.com) have a jQuery reference.
-    -  [see try jQuery course](http://try.jquery.com/) should take 3 hours to fully complete.
-
-- https://www.outlearn.com/
 
 
 [dev-philosophy]: https://en.wikipedia.org/wiki/List_of_software_development_philosophies
 [dry]: https://en.wikipedia.org/w/index.php?title=Don%27t_repeat_yourself&oldid=707025035
 [template-literal]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
-[npm]: https://docs.npmjs.com/getting-started/what-is-npm
-[npm-install]: https://docs.npmjs.com/getting-started/installing-npm-packages-locally
-[npm-install-g]: https://docs.npmjs.com/getting-started/installing-npm-packages-globally
-[npm-install-more]: https://docs.npmjs.com/cli/install
-[npm-packages]: https://docs.npmjs.com/getting-started/using-a-package.json
+[hogan]: http://twitter.github.io/hogan.js/
+[bootstrap]: http://getbootstrap.com/
+[w3bootstrap]: http://www.w3schools.com/bootstrap/
 [express]: http://expressjs.com/
 [express-install]: http://expressjs.com/en/starter/installing.html
 [express-hello]: http://expressjs.com/en/starter/hello-world.html
