@@ -323,7 +323,7 @@ We will start implementing our hip diary app so let's change index.html.
     <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-    <header>
+    <header class="header">
         <h1>Thoughts for my sanity</h1>
     </header>
     <section class="post-list">
