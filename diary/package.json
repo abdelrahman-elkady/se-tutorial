@@ -3,11 +3,10 @@
   "version": "0.0.1",
   "author": "Amr Draz <amr.m.draz@gmail.com>",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node app.js"
   },
   "dependencies": {
     "express": "^4.13.4",
-    "hjs": "0.0.6",
     "mongodb": "^2.1.7"
   }
 }
