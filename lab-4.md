@@ -36,11 +36,11 @@ By the end of the lab you should have acquired.
 
 ## Pre
 
-- If you haven't yet fill this [form][student-form] while creating a github account
+- If you haven't yet, fill this [form][student-form] while creating a github account
 
 ## Pre-requisite
 
-- Lab 2 is a prerequisite to redo it assuming you cloned the se-tutorial repo
+- Lab 2 is a prerequisite for this lab assuming you cloned the se-tutorial repo you can redo it by
 
 ```
 $ git checkout lab-2-start
@@ -56,15 +56,15 @@ $ git checkout lab-4-start
 
 ### What is npm
 
-The nodeJS eco-system has an abundance of packages that make carrying this forward easier and they are all stored on [npm][npm].
+The nodeJS eco-system has an abundance of packages that make carrying work forward easier and they are all stored on [npm][npm].
 
-npm allows developers to share code across projects we bundle this code in modules that we call packages.
+npm allows developers to share code across projects. We bundle this code in modules that we call packages.
 
 To learn more about npm see their [getting started guide][npm]. most notably there's a short npm install [locally][npm-install] and [globally][npm-install-g], more on install syntax [here][npm-install-more].
 
 ### Package.json
 
-All package related information about our app is note din package.json
+All package related information about our app is noted in package.json
 
 Since the package philosophy is based on making every package as small and reusable as possible, npm packages often have other packages __dependencies__.
 
@@ -108,7 +108,6 @@ You should wind up with something that looks like this
 If you remember in lab-2 we constructed a basic node server
 
 ```js
-// server.js
 var http = require('http');
 
 var handleRequest = function handleRequest(request, response){
@@ -127,8 +126,6 @@ server.listen(PORT, function(){
 And when we want to serve html files, we would do something like this
 
 ```js
-// server.js
-
 var http = require('http');
 var fs = require('fs');
 
@@ -149,13 +146,13 @@ server.listen(PORT, function(){
 });
 ```
 
-However as the node community recognizes this would've evidently not scale very well.
+However as the node community recognizes, this architecture would eventually not scale very well,  this is where middleware came in.
 
-#### install express
+#### Install express
 
-[ExpressJS][express] is a simple micro-framework that is highly expendable.
+[ExpressJS][express] is a simple micro-framework that is highly expandable.
 
-We will be using it in our project so we will add it as a dependency.
+We will be using express in our project, so we will add it as a dependency.
 
 If you understand that express is a package and how npm install works you should be able to pick the correct command form the [express install guide][express-install]. You will need the Internet at this point.
 
@@ -172,7 +169,7 @@ When you're done your package.json should look like this (at the time of writing
 }
 ```
 
-and your app folder should look like this
+and your diary app folder should look like this
 
 ```
  /Users/draz/se-project/se-tutorial/diary
@@ -182,9 +179,15 @@ and your app folder should look like this
 
 #### app.js
 
-Now write a [hello world express  app][express-hello] and run it to try it out.
+Now write a [hello world express  app][express-hello] and run it to try it out, change the port to 8080 so that we're consistent with those following along on c9.io.
 
-If you follow along you should be capable of testing it at [http://localhost:3000](htttp://localhost:3000).
+If you follow along you should be capable of testing your server by running
+
+```
+$ node app.js
+```
+
+and visiting [http://localhost:8080](htttp://localhost:8080) in the browser. (on c9 hit preview)
 
 You should now have a directory structure that looks like this
 
@@ -199,7 +202,7 @@ You should now have a directory structure that looks like this
 
 It is always best to abstract away unneeded development details from other people.
 
-Now we could type `node app.js` every time we want to start the app, but what if we decide to do things differently later on like use nodemon instead of node or other start commands.
+We could type `node app.js` every time we want to start the app, but what if we decide to do things differently later on like use nodemon instead of node or other start commands.
 
 Better to setup a [facade](https://sourcemaking.com/design_patterns/facade) in front of the app starting logic.
 
@@ -221,7 +224,7 @@ Your package.json should now look something like this.
 }
 ```
 
-and now we can start the app with
+and now we can start the app  by running
 
 ```
 $ npm start
@@ -261,7 +264,7 @@ In lab-1 we created a simple google.com page and in it we wrote all our html in 
 </html>
 ```
 
-Create a folder called static in your project and add an html file called index.html
+Create a folder called static in your project and add an html file called index.html with the code above
 
 You can then update the app.js file as follows
 
@@ -273,8 +276,8 @@ app.get('/', function (req, res) {
   res.sendFile(__dirname + '/static/index.html');
 });
 
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!');
+app.listen(8080, function () {
+  console.log('Example app listening on port 8080!');
 });
 ```
 
@@ -293,6 +296,13 @@ Your directory should now look like this
    `-- index.html
 ```
 
+Start the app and test that everything is working
+
+```
+$ npm start
+```
+
+> remember to test early and test often
 
 ### Static Files
 
@@ -426,7 +436,7 @@ If you refresh your web page right now you should now see something like this.
 
 ### Express exposing a static directory
 
-If we now go back to our terminal, run our server and visit `http://localhost:3000` we will see the page unstyled.
+If we now go back to our terminal, run our server and visit `http://localhost:8080` we will see the page unstyled.
 
 ![diary-no-css](./assets/lab-4/diary-no-css.png)
 
@@ -464,8 +474,8 @@ var app = express();
 
 app.use(express.static('./static'));
 
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!');
+app.listen(8080, function () {
+  console.log('Example app listening on port 8080!');
 });
 ```
 
@@ -554,7 +564,7 @@ $('.post-load-btn').on('click', function (event) {
 });
 ```
 
-> It is possible to trace your code by typing using `console.log()` to check that everything is working fine.
+> It is possible to trace your code by using `console.log()` to check that everything is working fine.
 
 Test your code, check the browser console for errors.
 
@@ -567,13 +577,13 @@ We will clean up main.js to look like this
 ```js
 // main.js
 var post = {
-    "header": "Title added with JavaScript",
-    "body": "This post's body text was populated with JavaScript too"
+    "title": "Title added with JavaScript",
+    "content": "This post's body text was populated with JavaScript too"
 };
 
 $('.post-load-btn').on('click', function (event) {
-    $('.post-list-item-header').html(post.header);
-    $('.post-list-item-body').html(post.body);
+    $('.post-list-item-header').html(post.title);
+    $('.post-list-item-body').html(post.content);
 });
 ```
 
@@ -585,14 +595,14 @@ To do this we use a technology called AJAX which allows us to load data asynchro
 
 #### Data from a JSON file
 
-So first let's take out out post data and move it to another file say post.json
+So first let's take out our post data and move it to another file say post.json
 
 Add a post.json file to our static folder
 
 ```json
 {
-    "header": "Title added with Ajax from a JSON file",
-    "body": "This post's body text was populated with JavaScript"
+    "title": "Title added with Ajax from a JSON file",
+    "content": "This post's body text was populated with JavaScript"
 }
 ```
 
@@ -604,8 +614,8 @@ $('.post-load-btn').on('click', function (event) {
     $.ajax({
         url: 'post.json',
         success: function (post) {
-            $('.post-list-item-header').html(post.header);
-            $('.post-list-item-body').html(post.body);
+            $('.post-list-item-header').html(post.title);
+            $('.post-list-item-body').html(post.content);
         }
     });
 });
@@ -623,15 +633,15 @@ In practice our data will probably be loaded from a database or file and modifie
 
 This is where we need to define routes in our express app to handle these various cases.
 
-Let's add a get route `/api/post` which returns a json response
+Let's add a get route `/api/post` which returns a json response to our app.js
 
 ```js
 // app.js
 
 app.get('/api/post', function(req, res) {
     var post = {
-        "header": "Title added with Ajax from a /api/post route",
-        "body": "This post's body text was populated with JavaScript"
+        "title": "Title added with Ajax from a /api/post route",
+        "content": "This post's body text was populated with JavaScript"
     }
     res.send(post)
 });
@@ -646,8 +656,8 @@ $('.post-load-btn').on('click', function (event) {
     $.ajax({
         url: 'api/post',
         success: function (post) {
-            $('.post-list-item-header').html(post.header);
-            $('.post-list-item-body').html(post.body);
+            $('.post-list-item-header').html(post.title);
+            $('.post-list-item-body').html(post.content);
         }
     });
 })
@@ -671,12 +681,6 @@ Which will contain final code for this lesson.
 
 Writing tests is essential for long term project maintenance.
 
-In this repo you will find a small introduction of testing we will do that via a file called perfect-code.js .
-
-If you open perfect code you will see that it is indeed the epitome of perfection and there's nothing for us to do other then bask in its perfection.
-
-Yet on closer inspection you may notice something is off.
-
 In  large system this may not be so apparent and our only means of avoiding this is to write code that tests our code.
 
 You're used to doing it yourself, you probably wrote print statements in your code when solving an algorithm to see if it's working fine, well my friend let me greet you with a wide smile for you have a little software tester in you.
@@ -685,6 +689,8 @@ Complete the following tutorials
 
 - [mocha test in general](http://code.tutsplus.com/tutorials/testing-in-nodejs--net-35018)
 - [test express api](https://www.codementor.io/nodejs/tutorial/testing-express-apis-with-supertest)
+
+And add a test file to test our one api route.
 
 
 ## Post Tutorial
