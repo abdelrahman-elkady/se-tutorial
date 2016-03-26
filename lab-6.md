@@ -7,6 +7,8 @@
 
 ## Tutorial Content
 
+Angualr has a very good tutorial on their site that teaches all the concepts, however it relyies on knowing a bit more then we tought you, for that reason we collected these micro tutorials to help you get started with angualr (they follow the lecture)
+
 You can use c9.io for these small project in case you're on a lab computer (due ot internet connection)
 
 - Create the following functions programing function (explained in tutorial)
@@ -23,6 +25,10 @@ You can use c9.io for these small project in case you're on a lab computer (due 
  - https://scotch.io/tutorials/submitting-ajax-forms-the-angularjs-way
  - https://scotch.io/tutorials/angularjs-form-validation
  - https://scotch.io/tutorials/handling-checkboxes-and-radio-buttons-in-angular-forms
- 
- This will make a good full app tutorial for the week after the next
- https://scotch.io/tutorials/build-an-etsy-clone-with-angular-and-stamplay-part-1
+- Angualr and bootstrap
+ - https://scotch.io/tutorials/how-to-correctly-use-bootstrapjs-and-angularjs-together
+
+This will make a good full app tutorial for the week after the next
+https://scotch.io/tutorials/build-an-etsy-clone-with-angular-and-stamplay-part-1
+
+Whenever you don't understand something read the Angualr Docs
