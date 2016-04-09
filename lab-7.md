@@ -209,7 +209,7 @@ which pulls our server form the repo and restarts
 To get familiar with the workfllow
 
 - create a branch other then master, lets call it test
-- make a trivial failing test to our test file
+- make a trivial failing test and add it to our test file
 - add commit and push the branch
 - checkout wercker you shoud see that the build is failing
 - fix the test so that it passes and push
