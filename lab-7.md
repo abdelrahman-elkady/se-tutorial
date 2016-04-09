@@ -122,11 +122,11 @@ sudo iptables -A OUTPUT -p tcp --dport 80 -j ACCEPT
 sudo apt-get install libcap2-bin
 sudo setcap cap_net_bind_service=+ep /usr/local/bin/node
 ```
-Another server is running on teh existing port
-- make sure you stopp all servers if you where using forever adn switched to pm2 `forever stopall`
+Another server is running on the existing port
+- make sure you stopp all servers if you where using forever and switched to pm2 `forever stopall`
 - you could kill all node processs by typing `killall node`
 
-Remember you can debug the bash cript by simply running in the termianl each command one by one.
+Remember you can debug the bash script by simply running in the termianl each command one by one.
 
 ### Setting up your CI and CD
 
@@ -139,10 +139,68 @@ wercker will require you do 3 things
 - add a wercker.yml file to your repo to tell wercker what to do with your repo when it gets it
 - add the wercker app's public key to your amazon instance so that wercker can ssh into it and run your update_script.sh
 
-you will find I have configured a wrecker.yml file already in the repo I asked you to use
-
-https://github.com/amrdraz/aws-wercker
-the remaining instructions are on the repo
+You will find I have configured a wrecker.yml file already in the repo I asked you to use
 
 
-Best of luck figuring out how this is done :D
+The remaining instructions for how to setup wercker are on [the repo](https://github.com/amrdraz/aws-wercker)
+
+Here I will discuss the wercker.yml file and exaplin each comand.
+
+You wil find in the repo a wercker.yml file
+
+```yml
+box: node
+build:
+   steps:
+      - npm-install
+      - npm-test
+
+deploy:
+   aws:
+      - add-ssh-key:
+         keyname: SSH_KEY
+         host: $HOST
+      - add-to-known_hosts:
+         hostname: $HOST
+   - script:
+         name: clone or pull then start
+         code: |
+            ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $USER@$HOST APP=$APP REPO_URL=$REPO_URL ./update_server.sh
+```
+
+This file is used to tell wercker what to do with your repo on each commit
+
+we tell wercker to use a node box, according to wercker a box is essentially a server iamge that's preconfigured, in this case it's a server that has node enviroment setup.
+
+we then configure wercker's build settings, we tell it that on each build it should follow the following steps, first run `npm install` then run `npm test`
+
+The whole point of CI is to make sure our tests are passing, there for your repo must have tests (otherwise the CI is useless), you will notice that we included a tervial test in the repo (one that will always pass) for the sake of demonstration
+
+so this build process should always work, if the build does not pass then the deploy process will not be triggered and you will be notified by email.
+
+next in the .yml file we configrued the deploy command
+
+the wercker deploy command can also hav steps however we wanted some cutom setup so we created a deploy target called aws (see the repo's readme) and told it it shoudl use this deploy target varaibles in when deploying
+
+we then tell it that for the aws deploy targget we sould like you to add the SSH_KEY we created to you .shh folder as well as add our host to your known hosts. This is so that we can ssh into our server.
+
+next we tell it to run in its terminal the following script
+
+```
+ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $USER@$HOST APP=$APP REPO_URL=$REPO_URL
+```
+
+This command basically ssh into our server with USER@HOST and runs the same command we ran before
+in runtime this line is doing this assumign user, host, app and repo_url
+
+```
+$ ssh ubuntu@52.16.65.161
+$ APP=aws-test REPO_URL=https://github.com/amrdraz/aws-wercker.git ./update_server.sh
+```
+which pulls our server form the repo and restarts
+
+- with this setup everytime we push a commit tests will autimatically run and you will know if this branch is passing.
+- when you commit to master if the build passes your app will be autiamtically deployed on the server.
+
+> please note that if you stop your instance your IP address will change and so you'll need to update the wercker deploy target configuration
+
