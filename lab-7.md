@@ -100,14 +100,14 @@ exit 0
 
 Now test that the scripts are working
 ```
-$ APP=aws-test REPO_URL=https://github.com/amrdraz/aws-wercker.git ./update_script.sh
+$ APP=aws-test REPO_URL=https://github.com/amrdraz/aws-wercker.git ./update_server.sh
 ```
 
 You will get a permission error
 this is because you have to make the file exucutable
 ```
 $ chmod u+x update_server.sh
-$ APP=aws-test REPO_URL=https://github.com/amrdraz/aws-wercker.git ./update_script.sh
+$ APP=aws-test REPO_URL=https://github.com/amrdraz/aws-wercker.git ./update_server.sh
 ```
 
 Once you try it out a cuple of times and fail, you will remember that you need to make sure you are using what works with your system :). you can check that the app is running with `pm2 list` and visiting your server
