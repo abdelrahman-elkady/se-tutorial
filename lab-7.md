@@ -204,3 +204,19 @@ which pulls our server form the repo and restarts
 
 > please note that if you stop your instance your IP address will change and so you'll need to update the wercker deploy target configuration
 
+## Getting Familiar with wercker
+
+To get familiar with the workfllow
+
+- create a branch other then master, lets call it test
+- make a trivial failing test to our test file
+- add commit and push the branch
+- checkout wercker you shoud see that the build is failing
+- fix the test so that it passes and push
+- you should see on wercker that the build passes but no deploy is triggered
+- `git checkout master` then `git merge test` to merge your passing test then push your new master
+- you should see wercker passing the build then deploying your server
+
+Integrate what you learned here in your upcoming ilston as you build your backend
+simialr to the assignment
+you should create tests for your modules methods and your API calls using mocha, chai and supertest
