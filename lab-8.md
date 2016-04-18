@@ -1,25 +1,45 @@
 # Lab 8
 
+## Objective
+
+- install android and ionic
+- build a todo app using ionic
 
 
-## tutorial guide
+## pre tutorial
+
+Cordova, used by ionic, allows you to build a web app into a a mobile app that can run on any platform.
+
+In ionic the most common platforms you may target are, ios, android, and browser. To build  for ios you will need a Mac. The ionic guide assumes you are a Mac user. accordingly if you're an ubuntu user you can only target the browser and android platformd.
+
+The guide refrences in the middle though not clear [this link](http://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html) for installing android on your system.
+
+To run android you will need to install java and the android sdk. (Estimated size 500MB for both in totttal)
+
+At the time fo writing android requires jdk 1.8 you could install the orecal verison by [downloading it from here](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+Or using the command line by installing opend-jdk [by following this guide](http://ubuntuhandbook.org/index.php/2015/01/install-openjdk-8-ubuntu-14-04-12-04-lts/)
+
+Google has  nice summary on how to [install android with android studio](http://developer.android.com/sdk/installing/index.html?pkg=tools).
+
+For emulation we you can test in the browser with `ionic serve`
+It is generally better to just run from your own android device if possible, in that case you replace emulate with run in the guide.
+
+## Tutorial guide
 
 We recomend you use your laptop and have everything preinstalled to follow the guide normally.
-- you will need to run android apps is ot install teh android sdk, for ios you will need x-code.
-- the tutroial is designed to run without them simply follow the getting started guide but only use the browser platform.
-- In case you attend the lab without your laptop you can use c9.io (since the university pc's take foreveer to downlaod)
+- You will need to run android apps so install the android sdk, for ios apps you will need x-code.
+- while you're waiting for android and ios to download you can try completing simply follow the getting started guide but only use the browser platform.
+- Follow this guild to get started with a To-do app, remember to modify it as instructed bellow.
 
-Follow this guild to get started with a To-do app, remember to modify it as instructed bellow.
 http://ionicframework.com/docs/guide/preface.html
 
-Since you can not install on c9.io the android sdk or ios's x-code you can only test your app using the browser platform.
+modify the guide by also adding the browser platform.
 
 ```
 $ ionic platform add browser
 ```
 
 instead of android or ios
-
 when building use
 
 ```
@@ -32,16 +52,12 @@ and to run simply type
 $ ionic serve
 ```
 
-in the case of c9.io can only preview using the 0.0.0.0:8080, so you run
+> when your android download is done and you installed the latest sdk try running this tutorial with it
 
-```
-$ inoic serve -a -p 8080
-```
+### Post tutorial
 
-### Intel XDK
-
-Generally for developing using ionic across platforms I would recomend installin the intel XDK platform
+Generally for developing using ionic across platforms you could installin the intel XDK platform
 https://software.intel.com/en-us/intel-xdk
 
-which allows you to create a clean ionic project, features a GUI editor, as well offer a way of emulating across devices without having to install anything exta.
+Which allows you to create a clean ionic project, features a GUI editor, as well offer a way of emulating across devices without having to install anything exta (for teams with no Mac user).
 
