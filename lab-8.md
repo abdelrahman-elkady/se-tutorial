@@ -16,7 +16,7 @@ The guide references in the middle though not clear [this link](http://cordova.a
 
 To run android you will need to install java and the android sdk. (Estimated size 500MB for both in total)
 
-At the time fo writing android requires jdk 1.8 you could install the orecal version by [downloading it from here](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+At the time fo writing android requires jdk 1.8 you could install the Oracle version by [downloading it from here](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 Or using the command line by installing opend-jdk [by following this guide](http://ubuntuhandbook.org/index.php/2015/01/install-openjdk-8-ubuntu-14-04-12-04-lts/)
 
 Google has a nice summary on how to [install android with android studio](http://developer.android.com/sdk/installing/index.html?pkg=tools).
