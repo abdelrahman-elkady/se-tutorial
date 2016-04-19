@@ -60,6 +60,8 @@ http://ionicframework.com/docs/guide/preface.html
 - Read the links to other parts of the documentation, investing the time in learning a bit more about each part will make your development easier.
 - In the Testing your app part, do only browser serve if you still don't have android or the other platforms.
 - For ios when you build it may ask you to npm install additional packages.
+- The red buttons open useful notes that may be relevant read them.
+- You don't need to release your app though that would be cool
 
 ### Post tutorial
 
