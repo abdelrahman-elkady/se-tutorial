@@ -62,16 +62,16 @@ If you have windows setup and you need to have both windows and Ubuntu installed
     ```bash
     $ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
     ```
-  - Restart your terminal session _i.e open a new terminal_ and run the following commands to install node 7.0.0
+  - Restart your terminal session _i.e open a new terminal_ and run the following commands to install node 6.9.5
   ```bash
-  $ nvm install 7.0
-  $ nvm alias default 7.0
-  $ nvm use 7.0
+  $ nvm install 6.9.5
+  $ nvm alias default 6.9.5
+  $ nvm use 6.9.5
   ```
   - Verify your installation by running the following commands, expect some output similar to the following:
   ```bash
   $ node --version
-  >> v7.0.0
+  >> v6.9.5
   $ npm --version
   >> 4.1.2
   ```
