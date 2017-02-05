@@ -42,13 +42,14 @@ If you have windows setup and you need to have both windows and Ubuntu installed
   $ sudo apt upgrade
   ```
 
-- Install Git
-  - **[Mac users]**
-    - You can install git using Xcode command line tools, that would require you to have some download progress, but it is an easy option.
-  - **[Ubuntu users]**:
-    - install git from `apt` by running the following in the terminal `sudo apt install git`
-  - **[advanced] [optional]** If you need the most updated version, you can compile git from source following these [instructions](https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-16-04#how-to-install-git-from-source).
+#### Installing Git
+- **[Mac users]**
+  - You can install git using Xcode command line tools, that would require you to have some download progress, but it is an easy option.
+- **[Ubuntu users]**:
+  - install git from `apt` by running the following in the terminal `sudo apt install git`
+- **[advanced] [optional]** If you need the most updated version, you can compile git from source following these [instructions](https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-16-04#how-to-install-git-from-source).
 
+#### Installing NodeJS
 - To install NodeJS, we will use [nvm](https://github.com/creationix/nvm), follow these steps to get it installed:
   - **[Mac]** you still need Xcode's command line tools installed if you did install git from source and skipped this part.
   - **[Ubuntu]** Install `build-essential` and `libssl-dev` packages through apt:
@@ -72,3 +73,5 @@ If you have windows setup and you need to have both windows and Ubuntu installed
   $ npm --version
   >> 4.1.2
   ```
+
+#### Installing MongoDb
