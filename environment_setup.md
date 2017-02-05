@@ -6,9 +6,9 @@ The course assumes a UNIX shell (Either **Mac** or **Linux**), accordingly if yo
 
 #### General requirements:
 - Linux or Mac
+- Git
 - NodeJS
 - MongoDb
-- Git
 - Text editor
 - **Modern** web browser
 
@@ -37,9 +37,16 @@ If you have windows setup and you need to have both windows and Ubuntu installed
 
 ### Environment Setup
 - **[Ubuntu only]** update your apt cache and your packages after first installation by running the following commands in the [terminal](http://askubuntu.com/questions/183775/how-do-i-open-a-terminal)
+  ```bash
+  $ sudo apt update
+  $ sudo apt upgrade
+  ```
+
 - Install Git
-  - **Mac users:**
+  - **[Mac users]**
     - You can install git using Xcode command line tools, that would require you to have some download progress, but it is an easy option.
-  - **Ubuntu users**:
-    - install git from `apt` by running the following in the terminal `sudo apt update && sudo apt install git`
--
+  - **[Ubuntu users]**:
+    - install git from `apt` by running the following in the terminal `sudo apt install git`
+  - **[advanced] [optional]** If you need the most updated version, you can compile git from source following these [instructions](https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-16-04#how-to-install-git-from-source).
+
+- 

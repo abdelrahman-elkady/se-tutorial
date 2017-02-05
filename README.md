@@ -3,4 +3,4 @@
 This repo contains different resources and guidelines for software engineering course.
 
 ### Content
-- Environment setup
+- [Environment setup](https://github.com/abdelrahman-elkady/se-tutorial/blob/master/environment_setup.md)
