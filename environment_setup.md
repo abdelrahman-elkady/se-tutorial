@@ -112,17 +112,18 @@ $ sudo nano /etc/systemd/system/mongodb.service
 ```
 Copy the following lines and paste it there (Ctrl + Shift + v), then close and save the file by hitting `Ctrl + x` then `y`
 
+```
+[Unit]
+Description=High-performance, schema-free document-oriented >database
+After=network.target
 
->[Unit]
->Description=High-performance, schema-free document-oriented >database
->After=network.target
->
->[Service]
->User=mongodb
->ExecStart=/usr/bin/mongod --quiet --config /etc/mongod.conf
->
->[Install]
->WantedBy=multi-user.target
+[Service]
+User=mongodb
+ExecStart=/usr/bin/mongod --quiet --config /etc/mongod.conf
+
+[Install]
+WantedBy=multi-user.target
+```
 
 Continue executing the following commands
 ```bash
