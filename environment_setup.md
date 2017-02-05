@@ -49,6 +49,8 @@ If you have windows setup and you need to have both windows and Ubuntu installed
   - install git from `apt` by running the following in the terminal `sudo apt install git`
 - **[advanced] [optional]** If you need the most updated version, you can compile git from source following these [instructions](https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-16-04#how-to-install-git-from-source).
 
+- Verify your installation by running `$ git --version`, you should expect some output like `git version 1.9.1`
+
 #### Installing NodeJS
 - To install NodeJS, we will use [nvm](https://github.com/creationix/nvm), follow these steps to get it installed:
   - **[Mac]** you still need Xcode's command line tools installed if you did install git from source and skipped this part.
@@ -75,3 +77,5 @@ If you have windows setup and you need to have both windows and Ubuntu installed
   ```
 
 #### Installing MongoDb
+
+##### Ubuntu 14.04
