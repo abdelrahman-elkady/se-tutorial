@@ -155,3 +155,9 @@ $ sudo systemctl enable mongodb
   $ brew update
   $ brew install mongodb
   ```
+
+#### Install a Text Editor
+You can use any text editor of your choice, we recommend using [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/) or [VSCode](https://code.visualstudio.com/), but you are free to choose whatever editor you like.
+
+#### Install a modern web browser
+Obviously, you will need some browser to run your web application on, we recommend using Google Chrome during this course.
