@@ -79,3 +79,79 @@ If you have windows setup and you need to have both windows and Ubuntu installed
 #### Installing MongoDb
 
 ##### Ubuntu 14.04
+
+Run the following commands:
+```bash
+$ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
+
+$ echo "deb http://repo.mongodb.org/apt/ubuntu "$(lsb_release -sc)"/mongodb-org/3.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.0.list
+
+$ sudo apt update
+
+$ sudo apt-get install -y mongodb-org
+
+# verify your installation by running
+$ service mongod status
+
+# Expect output like
+>> mongod start/running, process 1611
+```
+
+##### Ubuntu 16.04
+Run the following commands:
+```bash
+$ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
+
+$ echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
+
+$ sudo apt update
+
+$ sudo apt-get install -y mongodb-org
+
+$ sudo nano /etc/systemd/system/mongodb.service
+```
+Copy the following lines and paste it there (Ctrl + Shift + v), then close and save the file by hitting `Ctrl + x` then `y`
+
+
+>[Unit]
+>Description=High-performance, schema-free document-oriented >database
+>After=network.target
+>
+>[Service]
+>User=mongodb
+>ExecStart=/usr/bin/mongod --quiet --config /etc/mongod.conf
+>
+>[Install]
+>WantedBy=multi-user.target
+
+Continue executing the following commands
+```bash
+$ sudo systemctl start mongodb
+
+# verify that mongodb is running correctly
+$ sudo systemctl status mongodb
+
+# you should expect an output like
+>> ● mongodb.service - High-performance, schema-free document-oriented database
+   Loaded: loaded (/etc/systemd/system/mongodb.service; enabled; vendor preset: enabled)
+   Active: active (running) since Mon 2016-04-25 14:57:20 EDT; 1min 30s ago
+ Main PID: 4093 (mongod)
+    Tasks: 16 (limit: 512)
+   Memory: 47.1M
+      CPU: 1.224s
+   CGroup: /system.slice/mongodb.service
+           └─4093 /usr/bin/mongod --quiet --config /etc/mongod.conf
+
+# run the last command
+$ sudo systemctl enable mongodb
+```
+
+
+##### Mac
+
+- Install [homebrew](http://brew.sh/)
+- Run the following commands:
+  ```bash
+  $ brew update
+  $ brew install mongodb
+  ```
