@@ -151,7 +151,8 @@ $ sudo systemctl enable mongodb
 ##### Mac
 
 - Install [homebrew](http://brew.sh/)
-- Run the following commands:
+- Run the following commands:    
+
   ```bash
   $ brew update
   $ brew install mongodb
