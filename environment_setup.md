@@ -1,5 +1,5 @@
 ## Special cases and scenarios:
-For special cases and scenarios related to some problems and/or hardware specific issues, please **[check this guide]**(https://github.com/abdelrahman-elkady/se-tutorial/blob/master/env_tips)
+For special cases and scenarios related to some problems and/or hardware specific issues, please [**check this guide**](https://github.com/abdelrahman-elkady/se-tutorial/blob/master/env_tips)
 
 ## Main Setup
 
