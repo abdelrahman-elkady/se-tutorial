@@ -1,6 +1,10 @@
 ## Special cases and scenarios:
 For special cases and scenarios related to some problems and/or hardware specific issues, please [**check this guide**](https://github.com/abdelrahman-elkady/se-tutorial/blob/master/env_tips)
 
+## Note
+
+Please don't include the dollar sign "$" when copying over the commands in the terminal , these are just used to denote that it's a terminal command in writing.
+
 ## Main Setup
 
 This is a walk-through to setup the operating system and environment on your machine for the SE course.
@@ -40,16 +44,18 @@ If you have windows setup and you need to have both windows and Ubuntu installed
 
 ### Environment Setup
 - **[Ubuntu only]** update your apt cache and your packages after first installation by running the following commands in the [terminal](http://askubuntu.com/questions/183775/how-do-i-open-a-terminal)
-  ```bash
-  $ sudo apt update
-  $ sudo apt upgrade
+  </br>
+  ```
+  $ sudo apt-get update
+  $ sudo apt-get upgrade
   ```
 
 #### Installing Git
 - **[Mac users]**
   - You can install git using Xcode command line tools, that would require you to have some download progress, but it is an easy option.
 - **[Ubuntu users]**:
-  - install git from `apt` by running the following in the terminal `sudo apt install git`
+  - install git from `apt` by running the following in the terminal </br>
+  `$ sudo apt install git`
 - **[advanced] [optional]** If you need the most updated version, you can compile git from source following these [instructions](https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-16-04#how-to-install-git-from-source).
 
 - Verify your installation by running `$ git --version`, you should expect some output like `git version 1.9.1`
@@ -58,11 +64,13 @@ If you have windows setup and you need to have both windows and Ubuntu installed
 - To install NodeJS, we will use [nvm](https://github.com/creationix/nvm), follow these steps to get it installed:
   - **[Mac]** you still need Xcode's command line tools installed if you did install git from source and skipped this part.
   - **[Ubuntu]** Install `build-essential` and `libssl-dev` packages through apt:
-    ```bash
+  </br>
+    ```
     $ sudo apt install build-essential libssl-dev
     ```
   - run the following command to install nvm
-    ```bash
+  </br>
+    ```
     $ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
     ```
   - Restart your terminal session _i.e open a new terminal_ and run the following commands to install node 6.9.5
@@ -89,7 +97,7 @@ $ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
 
 $ echo "deb http://repo.mongodb.org/apt/ubuntu "$(lsb_release -sc)"/mongodb-org/3.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.0.list
 
-$ sudo apt update
+$ sudo apt-get update
 
 $ sudo apt-get install -y mongodb-org
 
@@ -107,7 +115,7 @@ $ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
 
 $ echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
 
-$ sudo apt update
+$ sudo apt-get update
 
 $ sudo apt-get install -y mongodb-org
 
