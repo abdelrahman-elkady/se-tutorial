@@ -86,6 +86,18 @@ If you have windows setup and you need to have both windows and Ubuntu installed
   $ npm --version
   >> 4.1.2
   ```
+  
+  - **[NOTE For Mac users]**: to enable the nvm shell function automatically and avoid having `nvm: command not found` while spawning new terminal instances, run the following commands to create `.bash_profile` file in your home directory and add the initialization script inside.    
+  ```bash
+  $ cd ~
+  $ nano .bash_profile
+  
+  # copy the following snippet and paste it there, then press CTRL+X followed by Y then Enter to save the file
+  export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+  ```
+  
+  Close your terminal and open another terminal and everything should work now :))
 
 #### Installing MongoDb
 
