@@ -114,7 +114,7 @@ $ sudo apt update
 $ sudo apt-get install -y mongodb-org
 
 # verify your installation by running
-$ service mongod status
+$ sudo service mongod status
 
 # Expect output like
 >> mongod start/running, process 1611
