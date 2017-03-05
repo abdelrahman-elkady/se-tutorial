@@ -71,3 +71,10 @@ If you already setup SSH key before ( for GitHub for example ), you can skip the
   $ nano ~/.ssh/authorized_keys
   ```
   To save the file in `nano` after pasting the key, press `Ctrl + X` --> `Y` --> `Enter`
+
+- After this, logout from the server, you should now be able to login again without specifying the keypair explicitly.
+  ```bash
+  $ ssh ubuntu@IP_ADDRESS
+  ```
+
+- With that, you can add multiple keys from different users, allowing your team members to have access to the server. 
