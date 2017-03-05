@@ -23,7 +23,7 @@ This guide will move you through the process of creating and setting up your ser
 
 - Press **Review and Launch**
 
-- When prompted to select the keypair, select the option to create new keypair and give it a name ![keypair-gen](https://github.com/abdelrahman-elkady/se-tutorial/blob/master/assets/images/screenshot-0005.png)
+- When prompted to select the keypair, select the option to create new keypair and give it a name ![keypair-gen](https://github.com/abdelrahman-elkady/se-tutorial/blob/master/assets/images/screenshot-0006.png)
 
 - **[[ IMPORTANT ]]** Do **NOT** delete your keypair, you will lose access to the instance if your keypair is lost.
 
@@ -39,6 +39,7 @@ This guide will move you through the process of creating and setting up your ser
   $ ssh -i your-key-pair.pem ubuntu@IP_ADDRESS
   ```
   You can bring the IP Address of the machine from AWS console -> Running instances.
+  ![instance-info](https://github.com/abdelrahman-elkady/se-tutorial/blob/master/assets/images/screenshot-0007.png)
 
 ### More on keys:
 
