@@ -77,4 +77,26 @@ If you already setup SSH key before ( for GitHub for example ), you can skip the
   $ ssh ubuntu@IP_ADDRESS
   ```
 
-- With that, you can add multiple keys from different users, allowing your team members to have access to the server. 
+- With that, you can add multiple keys from different users, allowing your team members to have access to the server.
+
+### Deploy your application to the server:
+
+To deploy the application you created on the server, we need first to setup the environment on the server. Fortunately, the internet speed on the server is blazingly fast, which will be done in minutes.
+
+- Setup the environment by using the [environment guide](https://github.com/abdelrahman-elkady/se-tutorial/blob/master/environment_setup.md), please follow the guide for an Ubuntu 16.04 machine as our server is running on that OS image.
+
+- Copy your code onto your server, the easiest way to do that is to push your code to GitHub repository and clone it on the server, this will also allow you to easily pull changes you apply to your codebase at any time.
+
+- Configure your network to open a port for your application, this can be done by visiting the **Network and Security** section in your AWS console. ##SCREENSHOT##
+
+- Select and edit the inbound rules, **ADD** a new rule with `TCP` with the port you want to open.
+
+#### NOTE:
+> Do **NOT** remove the SSH port, otherwise, you will lose the ability to connect with SSH to your instance.
+
+- Now, install `PM2` or `forever`, those are tools to manage your processes and let them run forever in the background, allowing your app to run in the background without the need to remain connected to the server, and without the need to keep the node process on the terminal.
+
+  ```bash
+  $ npm install -g pm2
+  ```
+- `cd` into your application directory, install the dependencies by running `npm install`. Then, instead of starting your app using `node startingFile.js`, run `pm2 start startingFile.js`.
