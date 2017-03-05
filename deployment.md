@@ -9,21 +9,21 @@ This guide will move you through the process of creating and setting up your ser
 
 ### Setup your account:
 - Go to your [GitHub education pack page](https://education.github.com/pack)
-- Under AWS Educate, claim your offer and setup your account ##SCREENSHOT##
+- Under AWS Educate, claim your offer and setup your account ![github-pack](https://github.com/abdelrahman-elkady/se-tutorial/blob/master/assets/images/screenshot-0008.png)
 
 ### Setting up the instance
 
-- Select EC2 Instance from AWS console ##SCREENSHOT##
+- Select EC2 Instance from AWS console ![aws-console](https://github.com/abdelrahman-elkady/se-tutorial/blob/master/assets/images/screenshot-0001.png)
 
-- Press on Launch instance under **Create instance** section to start creating and setting up your instance ##SCREENSHOT##
+- Press on Launch instance under **Create instance** section to start creating and setting up your instance ![create-instance](https://github.com/abdelrahman-elkady/se-tutorial/blob/master/assets/images/screenshot-0002.png)
 
-- Select your OS image, use **Ubuntu 16.04 - 64 bit** ##SCREENSHOT##
+- Select your OS image, use **Ubuntu 16.04 - 64 bit** ![os-img](https://github.com/abdelrahman-elkady/se-tutorial/blob/master/assets/images/screenshot-0003.png)
 
-- Select the **t2.micro** instance ##SCREENSHOT##
+- Select the **t2.micro** instance ![instance-type](https://github.com/abdelrahman-elkady/se-tutorial/blob/master/assets/images/screenshot-0004.png)
 
 - Press **Review and Launch**
 
-- When prompted to select the keypair, select the option to create new keypair and give it a name ##SCREENSHOT##
+- When prompted to select the keypair, select the option to create new keypair and give it a name ![keypair-gen](https://github.com/abdelrahman-elkady/se-tutorial/blob/master/assets/images/screenshot-0005.png)
 
 - **[[ IMPORTANT ]]** Do **NOT** delete your keypair, you will lose access to the instance if your keypair is lost.
 
