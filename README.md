@@ -8,3 +8,5 @@ This repo contains different resources and guidelines for software engineering c
 - [Resources](https://github.com/abdelrahman-elkady/se-tutorial/blob/master/resources.md)
 
 - [Sessions](https://github.com/abdelrahman-elkady/se-tutorial/blob/master/sessions.md)
+
+- [Deployment](https://github.com/abdelrahman-elkady/se-tutorial/blob/master/deployment.md)
