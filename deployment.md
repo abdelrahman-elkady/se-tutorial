@@ -88,9 +88,10 @@ To deploy the application you created on the server, we need first to setup the 
 
 - Copy your code onto your server, the easiest way to do that is to push your code to GitHub repository and clone it on the server, this will also allow you to easily pull changes you apply to your codebase at any time.
 
-- Configure your network to open a port for your application, this can be done by visiting the **Network and Security** section in your AWS console. ##SCREENSHOT##
+- Configure your network to open a port for your application, this can be done by visiting the **Network and Security** section in your AWS console. ![networks-security-tree](https://github.com/abdelrahman-elkady/se-tutorial/blob/master/assets/images/screenshot-0009.png)
 
 - Select and edit the inbound rules, **ADD** a new rule with `TCP` with the port you want to open.
+![security-inbound](https://github.com/abdelrahman-elkady/se-tutorial/blob/master/assets/images/screenshot-0010.png)
 
 #### NOTE:
 > Do **NOT** remove the SSH port, otherwise, you will lose the ability to connect with SSH to your instance.
