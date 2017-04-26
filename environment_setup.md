@@ -63,22 +63,21 @@ If you have windows setup and you need to have both windows and Ubuntu installed
 #### Installing NodeJS
 - To install NodeJS, we will use [nvm](https://github.com/creationix/nvm), follow these steps to get it installed:
   - **[Mac]** you still need Xcode's command line tools installed if you did install git from source and skipped this part.
-  - **[Ubuntu]** Install `build-essential` and `libssl-dev` packages through apt:
-  </br>
+  - **[Ubuntu]** Install `build-essential` and `libssl-dev` packages through apt:    
     ```
     $ sudo apt install build-essential libssl-dev
     ```
-  - run the following command to install nvm
-  </br>
-    ```
-    $ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
-    ```
-  - Restart your terminal session _i.e open a new terminal_ and run the following commands to install node 6.9.5
-  ```bash
-  $ nvm install 6.9.5
-  $ nvm alias default 6.9.5
-  $ nvm use 6.9.5
+  - run the following command to install nvm    
   ```
+    $ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
+  ```
+  - Restart your terminal session _i.e open a new terminal_ and run the following commands to install node 6.9.5    
+  ```bash
+  $ nvm install 6.9.5    
+  $ nvm alias default 6.9.5    
+  $ nvm use 6.9.5 
+  ```    
+  
   - Verify your installation by running the following commands, expect some output similar to the following:
   ```bash
   $ node --version
