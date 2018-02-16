@@ -71,19 +71,19 @@ If you have windows setup and you need to have both windows and Ubuntu installed
   ```
     $ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
   ```
-  - Restart your terminal session _i.e open a new terminal_ and run the following commands to install node 6.9.5    
+  - Restart your terminal session _i.e open a new terminal_ and run the following commands to install node 8.9.4    
   ```bash
-  $ nvm install 6.9.5    
-  $ nvm alias default 6.9.5    
-  $ nvm use 6.9.5 
+  $ nvm install 8.9.4    
+  $ nvm alias default 8.9.4    
+  $ nvm use 8.9.4 
   ```    
   
   - Verify your installation by running the following commands, expect some output similar to the following:
   ```bash
   $ node --version
-  >> v6.9.5
+  >> v8.9.4
   $ npm --version
-  >> 4.1.2
+  >> 5.6.0
   ```
   
   - **[NOTE For Mac users]**: to enable the nvm shell function automatically and avoid having `nvm: command not found` while spawning new terminal instances, run the following commands to create `.bash_profile` file in your home directory and add the initialization script inside.    
