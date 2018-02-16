@@ -69,7 +69,7 @@ If you have windows setup and you need to have both windows and Ubuntu installed
     ```
   - run the following command to install nvm    
   ```
-    $ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
+    $ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
   ```
   - Restart your terminal session _i.e open a new terminal_ and run the following commands to install node 6.9.5    
   ```bash
